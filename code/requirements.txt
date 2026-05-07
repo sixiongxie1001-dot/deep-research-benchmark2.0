@@ -1,0 +1,2 @@
+# Offline validation/report scripts use only the Python standard library.
+# Optional live reruns use HTTPS APIs directly via urllib.

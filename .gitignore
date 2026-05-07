@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+data
+scratch/
+scratch_*.json
+scratch_*.jsonl
+scratch_*.md
+rebuilt_report.md
