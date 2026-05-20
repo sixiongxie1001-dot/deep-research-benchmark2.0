@@ -13,7 +13,7 @@
     "tools": ["web_search", "page_visit", "pdf_fetch"]
   },
   "table1": [
-    {"rank": 1, "model": "Codex CLI + GPT-5.5",  "harness": "Codex CLI",      "slug": "gpt-5_5",                       "overall": 33.37, "retrieval": 37.84, "derivation": 32.55, "calibration": 34.16, "reasoning": 32.38, "min_task": 16.80, "max_task": 92.19},
+    {"rank": 1, "model": "GPT-5.5",              "harness": "Codex CLI",      "slug": "gpt-5_5",                       "overall": 33.37, "retrieval": 37.84, "derivation": 32.55, "calibration": 34.16, "reasoning": 32.38, "min_task": 16.80, "max_task": 92.19},
     {"rank": 2, "model": "Claude Opus 4.7",      "harness": "Claude Code CLI","slug": "claude-opus-4-7",               "overall": 31.84, "retrieval": 36.52, "derivation": 30.97, "calibration": 31.14, "reasoning": 31.59, "min_task": 3.91,  "max_task": 85.94},
     {"rank": 3, "model": "DeepSeek V4 Pro",      "harness": "Claude Code CLI","slug": "deepseek__deepseek-v4-pro",     "overall": 28.68, "retrieval": 32.89, "derivation": 27.73, "calibration": 29.77, "reasoning": 27.94, "min_task": 0.00,  "max_task": 82.03},
     {"rank": 4, "model": "GLM 5.1",              "harness": "Claude Code CLI","slug": "z-ai__glm-5_1",                 "overall": 28.18, "retrieval": 34.19, "derivation": 27.06, "calibration": 29.56, "reasoning": 26.70, "min_task": 15.63, "max_task": 84.38},

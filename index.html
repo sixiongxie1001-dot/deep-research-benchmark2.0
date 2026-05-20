@@ -184,7 +184,6 @@ function renderHome() {
                 <tr>
                   <th style="width: 50px">#</th>
                   <th>Model</th>
-                  <th>Harness</th>
                   <th style="width: 100px; text-align: right">Overall</th>
                   <th style="width: 100px; text-align: right">Retrieval</th>
                   <th style="width: 100px; text-align: right">Derivation</th>
@@ -390,7 +389,6 @@ function renderLeaderboardPage() {
                 <tr>
                   <th style="width: 40px">#</th>
                   <th>Model</th>
-                  <th>Harness</th>
                   <th style="width: 90px; text-align: right">Overall</th>
                   <th style="width: 90px; text-align: right">Retrieval</th>
                   <th style="width: 90px; text-align: right">Derivation</th>
@@ -512,7 +510,7 @@ function renderMethodPage() {
 
           <h3 class="section-title-sm">Evaluation protocol.</h3>
           <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.7; margin: 0">
-            Each (model, task) session is isolated. Eight models are hosted through Claude Code CLI; the ninth is Codex CLI + GPT-5.5. <strong style="color: var(--text)">Native search and browsing tools are disabled</strong>; every model receives only the benchmark-provided <code>web_search</code> / <code>page_visit</code> / <code>pdf_fetch</code> tools, with a budget of <strong style="color: var(--text)">200 web fetches and 30 minutes wall-clock</strong> per task.
+            Each (model, task) session is isolated. Eight models are hosted through Claude Code CLI; GPT-5.5 is hosted through Codex CLI. <strong style="color: var(--text)">Native search and browsing tools are disabled</strong>; every model receives only the benchmark-provided <code>web_search</code> / <code>page_visit</code> / <code>pdf_fetch</code> tools, with a budget of <strong style="color: var(--text)">200 web fetches and 30 minutes wall-clock</strong> per task.
           </p>
         </div>
       </div>
@@ -551,7 +549,7 @@ function renderFindingsPage() {
             </div>
             <h3 class="section-title-sm">Strong and weak models fail in qualitatively different ways.</h3>
             <p style="color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0 0 12px">
-              In the <strong style="color: var(--text)">top-4 group</strong> (Codex CLI + GPT-5.5, Opus, DeepSeek Pro, GLM), <em>incomplete derivation</em> accounts for <strong style="color: var(--text)">31%</strong> of failures. Strong models retrieve the right intermediate values but misapply a composition step — applying a gross-margin rate to total revenue instead of segment revenue, for example.
+              In the <strong style="color: var(--text)">top-4 group</strong> (GPT-5.5, Opus, DeepSeek Pro, GLM), <em>incomplete derivation</em> accounts for <strong style="color: var(--text)">31%</strong> of failures. Strong models retrieve the right intermediate values but misapply a composition step — applying a gross-margin rate to total revenue instead of segment revenue, for example.
             </p>
             <p style="color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0">
               In the <strong style="color: var(--text)">remaining-5 group</strong>, <em>hallucinated precision</em> rises to <strong style="color: var(--text)">38%</strong>. Weaker models commit to a precise number even when no authoritative source supports it. This is a qualitative phase transition in failure modes, not a scalar reduction.
@@ -598,7 +596,6 @@ function renderLBMini() {
       <tr>
         <td><span class="mono" style="color: var(--text-muted)">${r.rank.toString().padStart(2, '0')}</span></td>
         <td>${link}</td>
-        <td><span class="mono" style="color: var(--text-muted); font-size: 11px">${r.harness}</span></td>
         ${tdScore('overall')}
         ${tdScore('retrieval')}
         ${tdScore('derivation')}
@@ -628,7 +625,6 @@ function renderLBFull() {
       <tr>
         <td><span class="mono" style="color: var(--text-muted)">${r.rank.toString().padStart(2, '0')}</span></td>
         <td>${link}</td>
-        <td><span class="mono" style="color: var(--text-muted); font-size: 11px">${r.harness}</span></td>
         ${tdScore('overall')}
         ${tdScore('retrieval')}
         ${tdScore('derivation')}
@@ -641,7 +637,6 @@ function renderLBFull() {
     <tr style="background: var(--bg-subtle); border-top: 2px solid var(--border-soft)">
       <td></td>
       <td style="font-weight: 600; color: var(--text-muted)">Mean</td>
-      <td></td>
       <td class="mono" style="text-align: right; color: var(--text); font-weight: 600">${meanRow.overall.toFixed(2)}%</td>
       <td class="mono" style="text-align: right; color: var(--text-muted)">${meanRow.retrieval.toFixed(2)}%</td>
       <td class="mono" style="text-align: right; color: var(--text-muted)">${meanRow.derivation.toFixed(2)}%</td>
@@ -658,7 +653,7 @@ function renderCapabilityChart() {
   new Chart(document.getElementById('capability-chart'), {
     type: 'bar',
     data: {
-      labels: rows.map(r => r.model.replace('Codex CLI + ', '').replace('Claude ', '')),
+      labels: rows.map(r => r.model.replace('Claude ', '')),
       datasets: fams.map(f => ({
         label: f[0].toUpperCase() + f.slice(1),
         data: rows.map(r => r[f]),
