@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEEPWEB-BENCH — A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation</title>
+<meta name="description" content="DEEPWEB-BENCH is a deep research benchmark covering 100 industry-grounded tasks, 6,400 cells, 4 capability families, and 9 frontier LLMs. Released by Peking University, NeurIPS 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<script src="assets/shell.js"></script>
+<script>
+function getInitialPage() {
+  const h = location.hash.replace('#', '');
+  if (['leaderboard', 'browse', 'method', 'findings'].includes(h)) return h;
+  return 'home';
+}
+document.write(renderTopbar(getInitialPage()));
+</script>
+
+<main id="page"></main>
+
+<script>document.write(renderFooter());</script>
+<script>document.write(renderCmdK());</script>
+
+<script>
+let CASES = [];
+let LB = null;
+let PAPER = null;
+
+const MODEL_COLORS = {
+  'gpt-5_5': '#0f766e',
+  'claude-opus-4-7': '#1e40af',
+  'deepseek__deepseek-v4-pro': '#7c3aed',
+  'z-ai__glm-5_1': '#0891b2',
+  'claude-sonnet-4-6': '#475569',
+  'deepseek__deepseek-v4-flash': '#0d9488',
+  'qwen__qwen3_6-plus': '#65a30d',
+  'minimax__minimax-m2_7': '#be185d',
+  'moonshotai__kimi-k2_6': '#dc2626',
+};
+
+const CAP_CLASS = {
+  Retrieval: 'cap-retrieval',
+  Derivation: 'cap-derivation',
+  Reasoning: 'cap-reasoning',
+  Calibration: 'cap-calibration',
+};
+
+/* ─────────── Hero matrix: paper's 8×8 figure 1(a) ─────────── */
+function buildHeroMatrix() {
+  // Approximate cell values from Figure 1(a): rows = 8 entities, cols = 8 dimensions (D1=R, D2-5=D, D6=Cal, D7-8=Reas)
+  // Pattern: brighter green = higher score
+  const seed = [
+    [1.0, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5],
+    [0.5, 0.25, 0.5, 0.5, 0.25, 0.5, 0.25, 0.5],
+    [0.5, 0.5, 0.25, 0.5, 0.5, 0.5, 0.25, 0.5],
+    [0.25, 0.5, 0.5, 0.25, 0.5, 0.5, 0.5, 0.25],
+    [0.5, 0.25, 0.5, 0.5, 0.25, 0.5, 0.5, 0.25],
+    [1.0, 0.5, 0, 0.5, null, 0.5, 0, 0.5],
+    [0.5, 0.5, 0.25, 0.5, 0.5, 0.25, 0.5, 0.5],
+    [0.25, 0.5, 0.5, 0.25, 0.5, 0.5, 0.25, 0.5],
+  ];
+  const cellColor = v => {
+    if (v === null) return 'var(--bg-subtle)';      // N/A
+    if (v === 1) return 'var(--accent)';
+    if (v === 0.5) return 'var(--accent-soft)';
+    if (v === 0.25) return '#f4f1ea';
+    return '#fee2e2'; // 0
+  };
+  const cellText = v => v === null ? 'N/A' : v === 1 ? '1.0' : v === 0.5 ? '0.5' : v === 0.25 ? '0.25' : '0';
+  let html = '';
+  seed.forEach(row => row.forEach(v => {
+    html += `<div class="hero-matrix-cell" style="background: ${cellColor(v)}; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; color: ${v === 1 ? '#fff' : 'var(--text-muted)'}">${cellText(v)}</div>`;
+  }));
+  return html;
+}
+
+/* ─────────── Page renderers ─────────── */
+
+function renderHome() {
+  return `
+    <!-- HERO -->
+    <section class="section">
+      <div class="container hero">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tagline">
+              <span class="hero-tagline-dot"></span>
+              <span>NeurIPS 2026 · Peking University · CC-BY-4.0</span>
+            </div>
+            <h1 class="hero-title">DEEPWEB-BENCH: a deep research benchmark for the <span class="accent-word">current frontier</span>.</h1>
+            <p class="hero-lede">
+              100 industry-grounded tasks, each an 8×8 matrix of entities against analytical dimensions. Difficulty comes from three data properties: massive evidence collection, cross-source reconciliation, and long-horizon multi-step derivation. The strongest frontier agent reaches 33.37%; the weakest 16.79%.
+            </p>
+            <div class="hero-actions">
+              <a href="#leaderboard" data-tab="leaderboard" class="btn btn-primary tablink">View leaderboard</a>
+              <a href="#browse" data-tab="browse" class="btn btn-secondary tablink">Browse 100 tasks</a>
+              <a href="#method" data-tab="method" class="btn btn-ghost tablink">Methodology →</a>
+            </div>
+
+            <p class="byline" style="margin-top: 28px">
+              <span class="author eq">Sixiong Xie</span>,
+              <span class="author eq">Zhuofan Shi</span>,
+              <span class="author eq">Haiyang Shen</span>,
+              <span class="author">Jiuzheng Wang</span>,
+              <span class="author">Siqi Zhong</span>,
+              <span class="author">Mugeng Liu</span>,
+              <span class="author">Chongyang Pan</span>,
+              <span class="author">Peilun Jia</span>,
+              <span class="author">Baoqing Sun</span>,
+              <span class="author cor">Xiang Jing</span>,
+              <span class="author cor">Yun Ma</span>
+            </p>
+            <p class="byline-affil">Peking University</p>
+            <p class="byline-note"><span class="mark">*</span> Equal contribution &nbsp; <span class="mark">†</span> Corresponding authors</p>
+          </div>
+
+          <!-- Hero matrix: 8×8 with paper's score distribution -->
+          <div>
+            <div class="hero-matrix">
+              <div class="hero-matrix-label">
+                <span>One task · 64 cells</span>
+                <span class="mono" style="color: var(--text-muted)">Figure 1a</span>
+              </div>
+              <div class="hero-matrix-grid">${buildHeroMatrix()}</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 10px; color: var(--text-faint)">
+                <span>↓ 8 entities</span>
+                <span class="mono">D1 D2 D3 D4 D5 D6 D7 D8 →</span>
+              </div>
+              <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px">
+                <span class="cap cap-retrieval">D1 · Retrieval</span>
+                <span class="cap cap-derivation">D2-D5 · Derivation</span>
+                <span class="cap cap-calibration">D6 · Calibration</span>
+                <span class="cap cap-reasoning">D7-D8 · Reasoning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stat-row" style="margin-top: 40px">
+        <div class="stat-cell">
+          <div class="num">100</div>
+          <div class="lbl">Tasks</div>
+          <div class="sub">6 domain categories</div>
+        </div>
+        <div class="stat-cell">
+          <div class="num">6,400</div>
+          <div class="lbl">Total Cells</div>
+          <div class="sub">100 × 8 × 8</div>
+        </div>
+        <div class="stat-cell">
+          <div class="num">9</div>
+          <div class="lbl">Frontier Models</div>
+          <div class="sub">Codex CLI + Claude Code CLI</div>
+        </div>
+        <div class="stat-cell">
+          <div class="num">55,936</div>
+          <div class="lbl">Scored Cells</div>
+          <div class="sub">874/900 model-task pairs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD PREVIEW (paper Table 1) -->
+    <section class="section" id="leaderboard-preview">
+      <div class="container">
+        <p class="section-eyebrow">Leaderboard preview · paper table 1</p>
+        <h2 class="section-title">9 frontier agents on DEEPWEB-BENCH.</h2>
+        <p class="section-lede">
+          Each model uses the benchmark-provided <code>web_search</code> / <code>page_visit</code> / <code>pdf_fetch</code> tools — native search is disabled in both Codex CLI and Claude Code CLI. Budget per task: 200 web fetches, 30 minutes wall-clock.
+        </p>
+
+        <div class="card" style="overflow: hidden; margin-bottom: 16px">
+          <div style="overflow-x: auto">
+            <table class="tbl" id="lb-mini">
+              <thead>
+                <tr>
+                  <th style="width: 50px">#</th>
+                  <th>Model</th>
+                  <th>Harness</th>
+                  <th style="width: 100px; text-align: right">Overall</th>
+                  <th style="width: 100px; text-align: right">Retrieval</th>
+                  <th style="width: 100px; text-align: right">Derivation</th>
+                  <th style="width: 100px; text-align: right">Calibration</th>
+                  <th style="width: 100px; text-align: right">Reasoning</th>
+                </tr>
+              </thead>
+              <tbody id="lb-mini-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin: 0">
+          Best in each column highlighted. <a href="#leaderboard" class="tablink" data-tab="leaderboard" style="color: var(--accent); text-decoration: underline">Full leaderboard with task-level distributions →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 4 CAPABILITY FAMILIES -->
+    <section class="section">
+      <div class="container">
+        <p class="section-eyebrow">What the benchmark tests</p>
+        <h2 class="section-title">Four capability families, scored per cell.</h2>
+        <p class="section-lede">Every task's 8 dimensions follow a fixed split: 1 Retrieval, 4 Derivation, 1 Calibration, 2 Reasoning. Together they cover the three difficulty axes that distinguish real deep research from short browsing tasks.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px">
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <span class="cap cap-retrieval">Retrieval</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted)">1 of 8 · 12.5%</span>
+            </div>
+            <h3 class="section-title-sm">Single-source lookup.</h3>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.65; margin: 0">
+              Locate and read one authoritative document. Tests whether the agent can find the right primary source — establishes the evidence-collection baseline. <strong>Mean across 9 models: 32.83%.</strong>
+            </p>
+          </div>
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <span class="cap cap-derivation">Derivation</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted)">4 of 8 · 50%</span>
+            </div>
+            <h3 class="section-title-sm">Multi-step computation.</h3>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.65; margin: 0">
+              Compose values from multiple disclosed numbers — chain derivation, cross-column comparison, sum-of-parts. The dominant scoring axis. <strong>Mean: 26.10%.</strong>
+            </p>
+          </div>
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <span class="cap cap-reasoning">Reasoning</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted)">2 of 8 · 25%</span>
+            </div>
+            <h3 class="section-title-sm">Scenario analysis & extrapolation.</h3>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.65; margin: 0">
+              Counterfactual scenarios, quantitative extrapolation, normalized cross-benchmark comparison. Carry a model through to a quantitative answer. <strong>Mean: 26.19%.</strong>
+            </p>
+          </div>
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <span class="cap cap-calibration">Calibration</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted)">1 of 8 · 12.5%</span>
+            </div>
+            <h3 class="section-title-sm">Cross-source conflict & hallucination resistance.</h3>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.65; margin: 0">
+              No precise answer exists in the public record. A calibrated agent abstains; a weak one fabricates. The decisive axis for weak-model failure. <strong>Mean: 27.73%.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAIN DISTRIBUTION + SOURCE PROVENANCE (2-col) -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+          <div>
+            <p class="section-eyebrow">Domain coverage</p>
+            <h2 class="section-title-sm">6 industry categories.</h2>
+            <div class="card card-pad" id="domain-distribution"></div>
+            <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px">Each task targets a distinct industry segment within these categories.</p>
+          </div>
+
+          <div>
+            <p class="section-eyebrow">Source provenance</p>
+            <h2 class="section-title-sm">Every reference carries a T-level.</h2>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <div class="card" style="padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start">
+                <span class="tlevel tlevel-1">T1</span>
+                <div style="flex: 1; min-width: 0">
+                  <div style="font-weight: 600; color: var(--text); font-size: 13px">Primary filings & official disclosures</div>
+                  <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">SEC 10-K / 20-F, HKEX, prospectuses, final regulatory rules</div>
+                </div>
+              </div>
+              <div class="card" style="padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start">
+                <span class="tlevel tlevel-2">T2</span>
+                <div style="flex: 1; min-width: 0">
+                  <div style="font-weight: 600; color: var(--text); font-size: 13px">Methodology-published research</div>
+                  <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">IDC, Gartner, TrendForce, Canalys, IEA</div>
+                </div>
+              </div>
+              <div class="card" style="padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start">
+                <span class="tlevel tlevel-3">T3</span>
+                <div style="flex: 1; min-width: 0">
+                  <div style="font-weight: 600; color: var(--text); font-size: 13px">Reputable media & sell-side research</div>
+                  <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">Reuters, Bloomberg, Caixin, WSJ, named bank analyst reports</div>
+                </div>
+              </div>
+              <div class="card" style="padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start">
+                <span class="tlevel tlevel-4">T4</span>
+                <div style="flex: 1; min-width: 0">
+                  <div style="font-weight: 600; color: var(--text); font-size: 13px">Informal or weakly verifiable</div>
+                  <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">Personal blogs, forum posts, unsigned commentary, unverified social posts</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FINDINGS (paper section 4.3) -->
+    <section class="section" id="findings-preview">
+      <div class="container">
+        <p class="section-eyebrow">Findings · paper section 4.3</p>
+        <h2 class="section-title">Three findings from the evaluation.</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px">
+              <span class="pill pill-accent">Finding 01</span>
+            </div>
+            <h3 class="section-title-sm">Retrieval is not the bottleneck.</h3>
+            <p style="color: var(--text-muted); font-size: 13px; line-height: 1.65; margin: 0">
+              Retrieval gap accounts for only <strong style="color: var(--text)">12–14%</strong> of cell-level failures in both strong and weak model groups. Derivation and Calibration together account for <strong style="color: var(--text)">over 70%</strong> — the multi-step composition downstream of retrieval is where models actually fail.
+            </p>
+          </div>
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px">
+              <span class="pill pill-accent">Finding 02</span>
+            </div>
+            <h3 class="section-title-sm">Strong and weak models fail differently.</h3>
+            <p style="color: var(--text-muted); font-size: 13px; line-height: 1.65; margin: 0">
+              In the top-4 group, <strong style="color: var(--text)">incomplete derivation</strong> (31%) dominates — agents retrieve the right numbers but misapply a composition step. In the bottom-5 group, <strong style="color: var(--text)">hallucinated precision</strong> (38%) dominates — agents commit to a precise number when none exists.
+            </p>
+          </div>
+          <div class="card card-pad-lg">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px">
+              <span class="pill pill-accent">Finding 03</span>
+            </div>
+            <h3 class="section-title-sm">Models specialize across domains.</h3>
+            <p style="color: var(--text-muted); font-size: 13px; line-height: 1.65; margin: 0">
+              Pairwise Spearman ρ across task-level scores has mean <strong style="color: var(--text)">0.61</strong>, no pair exceeds 0.79 (top-2 vs Kimi drops to 0.37). On the most-disagreed tasks the cross-model standard deviation reaches <strong style="color: var(--text)">18.8 percentage points</strong>.
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 14px"><a href="#findings" class="tablink" data-tab="findings" style="color: var(--accent); text-decoration: underline">See the failure-mode breakdown and ρ matrix →</a></p>
+      </div>
+    </section>
+
+    <!-- CITATION -->
+    <section class="section">
+      <div class="container-narrow">
+        <p class="section-eyebrow">Use the dataset</p>
+        <h2 class="section-title">Released under CC-BY-4.0.</h2>
+        <p style="color: var(--text-muted); margin: 0 0 16px; font-size: 15px; line-height: 1.65">
+          Tasks, reference answers, source-provenance records, and per-cell scoring rubrics are mirrored on Hugging Face. Load with one line:
+        </p>
+        <pre class="code-block" style="margin: 0 0 18px">from datasets import load_dataset
+
+tasks   = load_dataset("deepweb-bench-anon/deepweb-bench", data_files="data/cases.jsonl",         split="train")
+answers = load_dataset("deepweb-bench-anon/deepweb-bench", data_files="data/model_answers.jsonl", split="train")
+scores  = load_dataset("deepweb-bench-anon/deepweb-bench", data_files="data/score_details.jsonl", split="train")</pre>
+
+        <p class="section-eyebrow" style="margin-top: 28px">BibTeX</p>
+        <div class="citation">
+          <span class="field">@article</span>{xie2026deepweb,<br>
+          &nbsp;&nbsp;<span class="field">title</span>={DEEPWEB-BENCH: A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation},<br>
+          &nbsp;&nbsp;<span class="field">author</span>={Xie, Sixiong and Shi, Zhuofan and Shen, Haiyang and Wang, Jiuzheng and Zhong, Siqi and Liu, Mugeng and Pan, Chongyang and Jia, Peilun and Sun, Baoqing and Jing, Xiang and Ma, Yun},<br>
+          &nbsp;&nbsp;<span class="field">journal</span>={NeurIPS},<br>
+          &nbsp;&nbsp;<span class="field">year</span>={2026},<br>
+          &nbsp;&nbsp;<span class="field">organization</span>={Peking University}<br>
+          }
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin: 12px 0 0">Code MIT · Data CC-BY-4.0 · Released alongside paper preprint</p>
+      </div>
+    </section>
+  `;
+}
+
+function renderLeaderboardPage() {
+  return `
+    <section class="section">
+      <div class="container">
+        <p class="section-eyebrow">Full results · paper table 1</p>
+        <h2 class="section-title">Leaderboard with per-family breakdown.</h2>
+        <p class="section-lede">
+          Overall is the mean task score; family columns are mean cell scores within that family. Best in each column bolded. Min/max task columns show task-level range — every model has wide per-task variation, even low-average models occasionally score high on high-disclosure domains.
+        </p>
+
+        <div class="card" style="overflow: hidden; margin-bottom: 14px">
+          <div style="overflow-x: auto">
+            <table class="tbl" id="lb-full">
+              <thead>
+                <tr>
+                  <th style="width: 40px">#</th>
+                  <th>Model</th>
+                  <th>Harness</th>
+                  <th style="width: 90px; text-align: right">Overall</th>
+                  <th style="width: 90px; text-align: right">Retrieval</th>
+                  <th style="width: 90px; text-align: right">Derivation</th>
+                  <th style="width: 90px; text-align: right">Calibration</th>
+                  <th style="width: 90px; text-align: right">Reasoning</th>
+                  <th style="width: 80px; text-align: right">Min task</th>
+                  <th style="width: 80px; text-align: right">Max task</th>
+                </tr>
+              </thead>
+              <tbody id="lb-full-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <p style="font-size: 12px; color: var(--text-muted); margin: 0">Click any model for a profile with its 100 task-level scores. Mean row uses the 9-model mean (paper Table 1 last row).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-eyebrow">Per-family chart</p>
+        <h2 class="section-title-sm">Where each model wins and loses.</h2>
+        <div class="card card-pad-lg">
+          <canvas id="capability-chart" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+          <div>
+            <p class="section-eyebrow">Cross-model correlation</p>
+            <h2 class="section-title-sm">Spearman ρ across 100 tasks.</h2>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 0 0 12px">Mean off-diagonal ρ = <strong style="color: var(--text)">0.61</strong>. Models disagree more than overall scores suggest.</p>
+            <div class="card card-pad" id="corr-matrix"></div>
+          </div>
+          <div>
+            <p class="section-eyebrow">Internal v3.8 trial</p>
+            <h2 class="section-title-sm">100 × 9 detail matrix.</h2>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 0 0 12px">Per-task scores from the v3.8 instrumented run (release artifact). Click a task to drill in.</p>
+            <div class="card" style="padding: 8px; overflow: hidden">
+              <div id="heatmap" style="overflow: auto; max-height: 380px" class="styled-scroll"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderBrowsePage() {
+  return `
+    <section class="section">
+      <div class="container">
+        <p class="section-eyebrow">Task catalog</p>
+        <h2 class="section-title">Browse 100 tasks.</h2>
+        <p class="section-lede">Each task is an 8 × 8 matrix of entities against analytical dimensions. Click to see the question, reference answers, source-provenance records, and the per-cell rubric.</p>
+
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 20px; flex-wrap: wrap">
+          <input id="browse-search" class="input" placeholder="Filter by domain, entity, or ID…" style="width: 280px">
+          <select id="browse-sort" class="input" style="width: auto">
+            <option value="id">Sort by ID</option>
+            <option value="hardest">Hardest first</option>
+            <option value="easiest">Easiest first</option>
+            <option value="spread">Largest spread</option>
+          </select>
+          <span id="browse-count" style="margin-left: auto; font-size: 12px; color: var(--text-muted)"></span>
+        </div>
+
+        <div id="browse-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px"></div>
+      </div>
+    </section>
+  `;
+}
+
+function renderMethodPage() {
+  return `
+    <section class="section">
+      <div class="container-narrow">
+        <p class="section-eyebrow">Methodology</p>
+        <h2 class="section-title">Task format and construction.</h2>
+
+        <div style="margin-top: 32px">
+          <h3 class="section-title-sm">Task interface.</h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.7; margin: 0 0 24px">
+            A task covers one subject domain and asks the agent to produce a broad set of quantitative analytical conclusions. The interface is a structured matrix: rows are <strong style="color: var(--text)">comparable entities</strong> within the same subject domain, columns are <strong style="color: var(--text)">analytical dimensions</strong>. Each (entity, dimension) pair is a cell with a quantitative answer (precise value, range, or <code>not available</code>).
+          </p>
+
+          <h3 class="section-title-sm">Cell record.</h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.7; margin: 0 0 24px">
+            Every cell carries a reference answer (with type, central value, unit, derivation), a list of supporting sources (each tagged with T1–T4 provenance and a verification verdict), a cross-source agreement flag (<code>consistent</code> / <code>divergent</code> / <code>single</code>), and a per-cell scoring rule.
+          </p>
+
+          <h3 class="section-title-sm">4-stage construction protocol.</h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.7; margin: 0 0 16px">
+            Domain experts build tasks through four stages. Each produces structured artifacts retained with the release.
+          </p>
+          <div class="card" style="overflow: hidden; margin-bottom: 28px">
+            <table class="tbl">
+              <thead><tr><th style="width: 70px">Stage</th><th style="width: 220px">Name</th><th>Output</th></tr></thead>
+              <tbody>
+                <tr><td><span class="mono">01</span></td><td><strong style="color: var(--text)">Domain & Entity Selection</strong></td><td>Subject area, comparable entity set with inclusion rationale, disclosure-variation flags</td></tr>
+                <tr><td><span class="mono">02</span></td><td><strong style="color: var(--text)">Dimension Design</strong></td><td>8 dimensions following the 1/4/1/2 capability-family split, with metric specifications</td></tr>
+                <tr><td><span class="mono">03</span></td><td><strong style="color: var(--text)">Reference Construction</strong></td><td>Per-cell reference: derivation chain, T1–T4 source list, cross-source agreement</td></tr>
+                <tr><td><span class="mono">04</span></td><td><strong style="color: var(--text)">Final Audit</strong></td><td>URL reachability, completeness, numeric consistency, capability split, no prompt-leak</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="section-title-sm">Scoring.</h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.7; margin: 0 0 16px">
+            Each cell is scored on a 4-tier rubric (<code>1.0 / 0.5 / 0.25 / 0</code>). For precise references, the score depends on relative tolerance (default ±10% for ratios, ±2pp for percentages); for ranges, on overlap with the reference interval; for <code>not available</code>, on whether the candidate abstained, returned a range with method, or fabricated. GPT-5.5 applies the rule per cell.
+          </p>
+
+          <div class="card" style="padding: 14px 18px; margin-bottom: 28px; background: var(--accent-soft); border-color: var(--accent)">
+            <p style="font-size: 13px; color: var(--accent-strong); margin: 0; line-height: 1.6"><strong>Inter-grader reliability:</strong> 200-cell stratified sample, two human annotators vs the automated grader. Cohen's κ = <strong>0.82</strong>. Disagreements concentrated on range-type cells where the tolerance boundary is ambiguous.</p>
+          </div>
+
+          <h3 class="section-title-sm">Evaluation protocol.</h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.7; margin: 0">
+            Each (model, task) session is isolated. Eight models are hosted through Claude Code CLI; the ninth is Codex CLI + GPT-5.5. <strong style="color: var(--text)">Native search and browsing tools are disabled</strong>; every model receives only the benchmark-provided <code>web_search</code> / <code>page_visit</code> / <code>pdf_fetch</code> tools, with a budget of <strong style="color: var(--text)">200 web fetches and 30 minutes wall-clock</strong> per task.
+          </p>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderFindingsPage() {
+  return `
+    <section class="section">
+      <div class="container-narrow">
+        <p class="section-eyebrow">Experimental findings</p>
+        <h2 class="section-title">Three takeaways from the run.</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 28px; margin-top: 32px">
+          <!-- Finding 1 -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <span class="pill pill-accent">Finding 01</span>
+              <span class="mono" style="font-size: 11px; color: var(--accent)">Retrieval bottleneck</span>
+            </div>
+            <h3 class="section-title-sm">Retrieval is not the bottleneck.</h3>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0 0 14px">
+              Two annotators classified 500 failing cells into five failure modes. Retrieval gap accounts for only <strong style="color: var(--text)">12–14%</strong> of failures in both strong and weak model groups. The remaining 86%+ come from modes downstream of retrieval.
+            </p>
+            <div class="card" style="overflow: hidden">
+              <table class="tbl" id="failure-table"></table>
+            </div>
+          </div>
+
+          <!-- Finding 2 -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <span class="pill pill-accent">Finding 02</span>
+              <span class="mono" style="font-size: 11px; color: var(--accent)">Failure-mode shift</span>
+            </div>
+            <h3 class="section-title-sm">Strong and weak models fail in qualitatively different ways.</h3>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0 0 12px">
+              In the <strong style="color: var(--text)">top-4 group</strong> (Codex CLI + GPT-5.5, Opus, DeepSeek Pro, GLM), <em>incomplete derivation</em> accounts for <strong style="color: var(--text)">31%</strong> of failures. Strong models retrieve the right intermediate values but misapply a composition step — applying a gross-margin rate to total revenue instead of segment revenue, for example.
+            </p>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0">
+              In the <strong style="color: var(--text)">remaining-5 group</strong>, <em>hallucinated precision</em> rises to <strong style="color: var(--text)">38%</strong>. Weaker models commit to a precise number even when no authoritative source supports it. This is a qualitative phase transition in failure modes, not a scalar reduction.
+            </p>
+          </div>
+
+          <!-- Finding 3 -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <span class="pill pill-accent">Finding 03</span>
+              <span class="mono" style="font-size: 11px; color: var(--accent)">Domain specialization</span>
+            </div>
+            <h3 class="section-title-sm">Models exhibit genuine specialization across domains.</h3>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0 0 14px">
+              Pairwise Spearman ρ across 100 task scores has mean <strong style="color: var(--text)">ρ = 0.61</strong>, no pair exceeds 0.79. The top-2 models together achieve the highest score on 79/100 tasks, but on the most-disagreed cases the cross-model standard deviation reaches <strong style="color: var(--text)">18.8 percentage points</strong>. Different models develop genuine domain-specific strengths.
+            </p>
+            <div class="card card-pad" id="corr-matrix-2"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─────────── Data-bound renderers ─────────── */
+
+function renderLBMini() {
+  // Use paper Table 1 numbers
+  const rows = PAPER.table1.filter(r => r.rank);
+  // Find best per column
+  const bestByCol = {};
+  ['overall', 'retrieval', 'derivation', 'calibration', 'reasoning'].forEach(c => {
+    bestByCol[c] = Math.max(...rows.map(r => r[c]));
+  });
+  document.getElementById('lb-mini-body').innerHTML = rows.map(r => {
+    const link = r.slug ? `<a href="model.html?slug=${r.slug}" style="color: var(--text); font-weight: 500">${r.model}</a>` : r.model;
+    const tdScore = (k) => {
+      const v = r[k];
+      const isBest = v === bestByCol[k];
+      return `<td class="mono ${isBest ? 'best-score' : ''}" style="text-align: right">${v.toFixed(2)}<span style="color: var(--text-muted)">%</span></td>`;
+    };
+    return `
+      <tr>
+        <td><span class="mono" style="color: var(--text-muted)">${r.rank.toString().padStart(2, '0')}</span></td>
+        <td>${link}</td>
+        <td><span class="mono" style="color: var(--text-muted); font-size: 11px">${r.harness}</span></td>
+        ${tdScore('overall')}
+        ${tdScore('retrieval')}
+        ${tdScore('derivation')}
+        ${tdScore('calibration')}
+        ${tdScore('reasoning')}
+      </tr>`;
+  }).join('');
+}
+
+function renderLBFull() {
+  const allRows = PAPER.table1;
+  const rows = allRows.filter(r => r.rank);
+  const bestByCol = {};
+  ['overall', 'retrieval', 'derivation', 'calibration', 'reasoning'].forEach(c => {
+    bestByCol[c] = Math.max(...rows.map(r => r[c]));
+  });
+  const meanRow = allRows.find(r => r.slug === '_mean');
+
+  document.getElementById('lb-full-body').innerHTML = rows.map(r => {
+    const link = r.slug ? `<a href="model.html?slug=${r.slug}" style="color: var(--text); font-weight: 500">${r.model}</a>` : r.model;
+    const tdScore = (k) => {
+      const v = r[k];
+      const isBest = v === bestByCol[k];
+      return `<td class="mono ${isBest ? 'best-score' : ''}" style="text-align: right">${v.toFixed(2)}<span style="color: var(--text-muted)">%</span></td>`;
+    };
+    return `
+      <tr>
+        <td><span class="mono" style="color: var(--text-muted)">${r.rank.toString().padStart(2, '0')}</span></td>
+        <td>${link}</td>
+        <td><span class="mono" style="color: var(--text-muted); font-size: 11px">${r.harness}</span></td>
+        ${tdScore('overall')}
+        ${tdScore('retrieval')}
+        ${tdScore('derivation')}
+        ${tdScore('calibration')}
+        ${tdScore('reasoning')}
+        <td class="mono" style="text-align: right; color: var(--text-muted)">${r.min_task.toFixed(2)}</td>
+        <td class="mono" style="text-align: right; color: var(--text-muted)">${r.max_task.toFixed(2)}</td>
+      </tr>`;
+  }).join('') + `
+    <tr style="background: var(--bg-subtle); border-top: 2px solid var(--border-soft)">
+      <td></td>
+      <td style="font-weight: 600; color: var(--text-muted)">Mean</td>
+      <td></td>
+      <td class="mono" style="text-align: right; color: var(--text); font-weight: 600">${meanRow.overall.toFixed(2)}%</td>
+      <td class="mono" style="text-align: right; color: var(--text-muted)">${meanRow.retrieval.toFixed(2)}%</td>
+      <td class="mono" style="text-align: right; color: var(--text-muted)">${meanRow.derivation.toFixed(2)}%</td>
+      <td class="mono" style="text-align: right; color: var(--text-muted)">${meanRow.calibration.toFixed(2)}%</td>
+      <td class="mono" style="text-align: right; color: var(--text-muted)">${meanRow.reasoning.toFixed(2)}%</td>
+      <td></td><td></td>
+    </tr>`;
+}
+
+function renderCapabilityChart() {
+  const rows = PAPER.table1.filter(r => r.rank);
+  const fams = ['retrieval', 'derivation', 'calibration', 'reasoning'];
+  const famColors = { retrieval: '#3730a3', derivation: '#047857', calibration: '#be185d', reasoning: '#92400e' };
+  new Chart(document.getElementById('capability-chart'), {
+    type: 'bar',
+    data: {
+      labels: rows.map(r => r.model.replace('Codex CLI + ', '').replace('Claude ', '')),
+      datasets: fams.map(f => ({
+        label: f[0].toUpperCase() + f.slice(1),
+        data: rows.map(r => r[f]),
+        backgroundColor: famColors[f] + 'cc',
+        borderColor: famColors[f],
+        borderWidth: 1,
+      })),
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 10, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%` } },
+      },
+      scales: {
+        y: { beginAtZero: true, grid: { color: '#ede9df' }, ticks: { font: { size: 10, family: 'JetBrains Mono' }, callback: v => v + '%' } },
+        x: { grid: { display: false }, ticks: { font: { size: 9 }, maxRotation: 30, minRotation: 30 } },
+      },
+    },
+  });
+}
+
+function renderCorrMatrix(containerId) {
+  const labels = PAPER.correlation_matrix._label_order;
+  const vals = PAPER.correlation_matrix.values;
+  let html = '<table style="border-collapse: collapse; width: 100%; max-width: 540px"><thead><tr><th style="background: transparent"></th>';
+  labels.forEach(l => { html += `<th style="font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 4px 6px; text-align: center; color: var(--text-muted); font-weight: 600">${l}</th>`; });
+  html += '</tr></thead><tbody>';
+  vals.forEach((row, i) => {
+    html += `<tr><td style="font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 4px 6px; text-align: right; color: var(--text-muted); font-weight: 600">${labels[i]}</td>`;
+    row.forEach((v, j) => {
+      if (i === j) {
+        html += `<td class="corr-cell" style="background: var(--text); color: white">${v.toFixed(2)}</td>`;
+      } else {
+        const t = (v - 0.3) / 0.6;
+        const bg = `hsl(${174 - 30 * (1-t)}, ${30 + 30*t}%, ${94 - 30*t}%)`;
+        const fg = v > 0.7 ? '#fff' : 'var(--text)';
+        html += `<td class="corr-cell" style="background: ${bg}; color: ${fg}">${v.toFixed(2)}</td>`;
+      }
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  html += '<p style="font-size: 11px; color: var(--text-muted); margin: 10px 0 0">Diagonal omitted. Mean off-diagonal ρ = <strong>' + PAPER.correlation_matrix.mean_off_diagonal + '</strong>.</p>';
+  document.getElementById(containerId).innerHTML = html;
+}
+
+function renderFailureTable() {
+  const fm = PAPER.failure_modes;
+  const modes = [
+    ['Hallucinated precision', 'hallucinated_precision', 'hard'],
+    ['Silent source choice', 'silent_source_choice', 'neutral'],
+    ['Incomplete derivation', 'incomplete_derivation', 'easy'],
+    ['Scope drift', 'scope_drift', 'neutral'],
+    ['Retrieval gap', 'retrieval_gap', 'pass'],
+  ];
+  document.getElementById('failure-table').innerHTML = `
+    <thead>
+      <tr>
+        <th>Failure mode</th>
+        <th style="width: 110px; text-align: right">Top-4</th>
+        <th style="width: 110px; text-align: right">Other 5</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${modes.map(([label, key]) => {
+        const a = fm.top4[key], b = fm.other5[key];
+        const dom = Math.max(a, b);
+        const winner = a > b ? 'Top-4' : 'Other 5';
+        return `<tr>
+          <td><strong>${label}</strong></td>
+          <td class="mono" style="text-align: right ${a === Math.max(...modes.map(m => fm.top4[m[1]])) ? '; color: var(--text); font-weight: 700' : '; color: var(--text-muted)'}">${a}%</td>
+          <td class="mono" style="text-align: right ${b === Math.max(...modes.map(m => fm.other5[m[1]])) ? '; color: var(--text); font-weight: 700' : '; color: var(--text-muted)'}">${b}%</td>
+          <td style="font-size: 12px; color: var(--text-muted)">${
+            key === 'incomplete_derivation' ? 'Dominant for strong models — composition step misapplied.' :
+            key === 'hallucinated_precision' ? 'Dominant for weak models — confident precise number without authoritative source.' :
+            key === 'silent_source_choice' ? 'Picks one source without disclosing alternatives or conflicts.' :
+            key === 'scope_drift' ? 'Wrong unit / fiscal period / aggregation level.' :
+            'Could not locate publicly indexable authoritative source.'}
+          </td>
+        </tr>`;
+      }).join('')}
+    </tbody>
+  `;
+}
+
+function renderDomainDistribution() {
+  const dist = PAPER.dataset_stats.domain_distribution;
+  const maxN = Math.max(...dist.map(d => d.n_tasks));
+  document.getElementById('domain-distribution').innerHTML = `
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      ${dist.map(d => `
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px">
+            <span style="font-weight: 500; color: var(--text)">${d.domain}</span>
+            <span class="mono" style="color: var(--text-muted)">${d.n_tasks}</span>
+          </div>
+          <div style="height: 8px; background: var(--bg-subtle); border-radius: 4px; overflow: hidden">
+            <div style="height: 100%; width: ${(d.n_tasks / maxN * 100).toFixed(1)}%; background: var(--accent)"></div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderBrowse() {
+  const q = document.getElementById('browse-search').value.toLowerCase().trim();
+  const sort = document.getElementById('browse-sort').value;
+  let filtered = CASES.filter(c => !q || (c.case_id + ' ' + c.title + ' ' + c.domain + ' ' + c.entities.join(' ')).toLowerCase().includes(q));
+  if (sort === 'hardest') filtered.sort((a, b) => (a.max_score ?? 999) - (b.max_score ?? 999));
+  else if (sort === 'easiest') filtered.sort((a, b) => (b.max_score ?? -1) - (a.max_score ?? -1));
+  else if (sort === 'spread') filtered.sort((a, b) => ((b.max_score ?? 0) - (b.min_score ?? 0)) - ((a.max_score ?? 0) - (a.min_score ?? 0)));
+  else filtered.sort((a, b) => a.case_id.localeCompare(b.case_id));
+
+  document.getElementById('browse-count').textContent = `${filtered.length} of ${CASES.length} tasks`;
+  const grid = document.getElementById('browse-grid');
+  if (!filtered.length) { grid.innerHTML = '<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted)">No matching tasks.</div>'; return; }
+  grid.innerHTML = filtered.map(c => {
+    const num = (c.case_id.match(/^(\d+)_/) || ['', '?'])[1];
+    return `
+      <a href="case.html?id=${encodeURIComponent(c.case_id)}" class="case-card animate-slide-up">
+        <div class="case-card-id">task · ${num}</div>
+        <div class="case-card-title">${c.domain || c.title}</div>
+        <div class="case-card-entities">${c.entities.slice(0, 4).join(' · ')}${c.entities.length > 4 ? ' …' : ''}</div>
+        <div class="case-card-foot">
+          <span>${c.n_entities} ent · ${c.models_scored}/9</span>
+          ${c.avg_score != null ? `<span class="pill ${scoreClass(c.avg_score)}">${c.avg_score.toFixed(1)}%</span>` : ''}
+        </div>
+      </a>`;
+  }).join('');
+}
+
+function renderHeatmap() {
+  let html = '<table style="border-collapse: collapse"><thead><tr>';
+  html += `<th style="position: sticky; left: 0; background: var(--bg-card); padding: 8px 10px; text-align: left; color: var(--text-muted); min-width: 160px; z-index: 2; border-bottom: 1px solid var(--border-soft); font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em">Task</th>`;
+  LB.models.forEach(m => {
+    html += `<th style="padding: 4px 2px; text-align: center; color: var(--text); font-weight: 600; writing-mode: vertical-rl; transform: rotate(180deg); height: 96px; min-width: 38px; font-size: 10px; border-bottom: 1px solid var(--border-soft)"><a href="model.html?slug=${m.slug}" style="color: var(--text)">${m.name}</a></th>`;
+  });
+  html += '</tr></thead><tbody>';
+  CASES.slice().sort((a,b) => a.case_id.localeCompare(b.case_id)).forEach(c => {
+    html += '<tr>';
+    html += `<td style="position: sticky; left: 0; background: var(--bg-card); padding: 4px 10px; border-bottom: 1px solid var(--border-faint); max-width: 180px"><a href="case.html?id=${encodeURIComponent(c.case_id)}" style="color: var(--text); font-size: 11px">${c.case_id.replace(/^\d+_/, '').replace(/_/g, ' ')}</a></td>`;
+    LB.models.forEach(m => {
+      const s = m.per_case[c.case_id];
+      if (s == null) html += `<td class="matrix-cell" style="background: var(--bg-subtle); color: var(--text-faint); border-bottom: 1px solid var(--border-faint)">—</td>`;
+      else html += `<td class="matrix-cell" style="background: ${scoreColor(s)}; color: ${scoreTextColor(s)}; border-bottom: 1px solid var(--border-faint)" title="${c.title} · ${m.name}: ${s.toFixed(1)}%">${s.toFixed(0)}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  document.getElementById('heatmap').innerHTML = html;
+}
+
+/* ─────────── Tab switcher ─────────── */
+function showTab(key, push = true) {
+  const page = document.getElementById('page');
+  document.querySelectorAll('.topbar-link').forEach(l => {
+    const k = l.getAttribute('href').split('#')[1] || 'home';
+    l.classList.toggle('active', k === key);
+  });
+
+  if (key === 'home') page.innerHTML = renderHome();
+  else if (key === 'leaderboard') page.innerHTML = renderLeaderboardPage();
+  else if (key === 'browse') page.innerHTML = renderBrowsePage();
+  else if (key === 'method') page.innerHTML = renderMethodPage();
+  else if (key === 'findings') page.innerHTML = renderFindingsPage();
+
+  if (key === 'home') {
+    if (PAPER) renderLBMini();
+    if (PAPER) renderDomainDistribution();
+  } else if (key === 'leaderboard') {
+    if (PAPER) {
+      renderLBFull();
+      renderCapabilityChart();
+      renderCorrMatrix('corr-matrix');
+      if (LB && CASES.length) renderHeatmap();
+    }
+  } else if (key === 'browse') {
+    if (CASES.length) {
+      renderBrowse();
+      document.getElementById('browse-search').addEventListener('input', renderBrowse);
+      document.getElementById('browse-sort').addEventListener('change', renderBrowse);
+    }
+  } else if (key === 'findings') {
+    if (PAPER) {
+      renderFailureTable();
+      renderCorrMatrix('corr-matrix-2');
+    }
+  }
+
+  document.querySelectorAll('.tablink').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const k = a.dataset.tab;
+      location.hash = '#' + k;
+      showTab(k);
+    });
+  });
+
+  if (push) history.replaceState(null, '', '#' + key);
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+/* ─────────── Init ─────────── */
+const startTab = getInitialPage();
+Promise.all([
+  fetch('data/cases.json').then(r => r.json()),
+  fetch('data/leaderboard.json').then(r => r.json()),
+  fetch('data/paper_results.json').then(r => r.json()),
+]).then(([cases, lb, paper]) => {
+  CASES = cases;
+  LB = lb;
+  PAPER = paper;
+  initCmdK(cases);
+  showTab(startTab);
+}).catch(e => {
+  document.getElementById('page').innerHTML = `<div class="container" style="padding: 64px 0; text-align: center; color: var(--hard)">Failed to load: ${e.message}</div>`;
+});
+
+window.addEventListener('hashchange', () => {
+  const k = location.hash.replace('#', '') || 'home';
+  if (['home', 'leaderboard', 'browse', 'method', 'findings'].includes(k)) showTab(k, false);
+});
+</script>
+</body>
+</html>

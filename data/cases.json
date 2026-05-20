@@ -1,0 +1,1993 @@
+[
+  {
+    "case_id": "01_ai_foundation_labs",
+    "title": "Global AI Foundation Model Labs — Deep Research Analysis",
+    "domain": "Global AI Foundation Model Labs",
+    "entities": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind",
+      "Meta AI",
+      "xAI",
+      "Mistral AI",
+      "Cohere",
+      "01.AI (Zero-One AI)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 65.93,
+    "max_score": 78.12,
+    "min_score": 57.81
+  },
+  {
+    "case_id": "02_cloud_hyperscalers",
+    "title": "Global Cloud Hyperscalers — Deep Research Analysis (v3.8 R6 Hardened)",
+    "domain": "Global Cloud Hyperscalers",
+    "entities": [
+      "AWS",
+      "Microsoft Azure",
+      "Google Cloud Platform",
+      "Oracle Cloud Infrastructure",
+      "Alibaba Cloud",
+      "Tencent Cloud",
+      "IBM Cloud",
+      "Baidu AI Cloud"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 31.81,
+    "max_score": 47.27,
+    "min_score": 21.09
+  },
+  {
+    "case_id": "03_semi_equipment",
+    "title": "Global Semiconductor Equipment — Deep Research Analysis (v3.8 R6 Hardened)",
+    "domain": "Global Semiconductor Equipment",
+    "entities": [
+      "ASML",
+      "Applied Materials",
+      "Lam Research",
+      "Tokyo Electron",
+      "KLA",
+      "Advantest",
+      "SCREEN Semiconductor",
+      "Teradyne"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 44.23,
+    "max_score": 64.06,
+    "min_score": 32.03
+  },
+  {
+    "case_id": "04_global_banking",
+    "title": "Global Banking G-SIBs — Deep Research Analysis (v3.8 R6 Hardened)",
+    "domain": "Global Banking G-SIBs",
+    "entities": [
+      "JPMorgan Chase",
+      "Bank of America",
+      "Citigroup",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "HSBC Holdings",
+      "Barclays",
+      "UBS Group"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 61.37,
+    "max_score": 86.33,
+    "min_score": 28.12
+  },
+  {
+    "case_id": "05_oil_gas_transition",
+    "title": "Global Oil & Gas Transition — Deep Research Analysis (v3.8 R6)",
+    "domain": "Global Oil & Gas Transition",
+    "entities": [
+      "ExxonMobil",
+      "Chevron",
+      "Shell",
+      "BP",
+      "TotalEnergies",
+      "Eni",
+      "Equinor",
+      "ConocoPhillips"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 51.43,
+    "max_score": 77.34,
+    "min_score": 39.06
+  },
+  {
+    "case_id": "06_defense_primes",
+    "title": "Global Defense Primes — Deep Research Analysis (v3.8 R6)",
+    "domain": "Global Defense Primes",
+    "entities": [
+      "Lockheed Martin",
+      "RTX Corporation",
+      "Northrop Grumman",
+      "General Dynamics",
+      "BAE Systems",
+      "Boeing Defense (BDS segment)",
+      "Thales",
+      "Leonardo"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 60.46,
+    "max_score": 89.84,
+    "min_score": 34.77
+  },
+  {
+    "case_id": "07_luxury_goods",
+    "title": "Global Luxury Goods — Deep Research Analysis (v3.8 R6)",
+    "domain": "Global Luxury Goods",
+    "entities": [
+      "LVMH",
+      "Kering",
+      "Hermès",
+      "Richemont",
+      "Prada Group",
+      "Burberry",
+      "Moncler",
+      "Brunello Cucinelli"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 74.0,
+    "max_score": 100.0,
+    "min_score": 43.36
+  },
+  {
+    "case_id": "08_payment_networks",
+    "title": "Global Payment Networks & Fintech — Deep Research Analysis (v3.8 R6)",
+    "domain": "Global Payment Networks & Fintech",
+    "entities": [
+      "Visa",
+      "Mastercard",
+      "PayPal",
+      "Block",
+      "Adyen",
+      "Fiserv",
+      "Stripe",
+      "Klarna"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 63.41,
+    "max_score": 81.25,
+    "min_score": 53.12
+  },
+  {
+    "case_id": "09_biotech_platforms",
+    "title": "Global Biotech Platforms — Deep Research Analysis (v3.8 R6)",
+    "domain": "Global Biotech Platforms",
+    "entities": [
+      "Vertex",
+      "Regeneron",
+      "Amgen",
+      "Moderna",
+      "BioNTech",
+      "Genmab",
+      "Argenx",
+      "Alnylam"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 73.26,
+    "max_score": 87.5,
+    "min_score": 48.05
+  },
+  {
+    "case_id": "100_off_price_and_treasure_hunt_retailers",
+    "title": "Off-Price and Treasure-Hunt Retailers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Off-Price and Treasure-Hunt Retailers",
+    "entities": [
+      "The TJX Companies",
+      "Ross Stores",
+      "Burlington Stores",
+      "Ollie's Bargain Outlet",
+      "Grocery Outlet",
+      "B&M European Value Retail",
+      "Pepco Group",
+      "Action Holding (3i portfolio)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 14.37,
+    "max_score": 32.42,
+    "min_score": 0.39
+  },
+  {
+    "case_id": "10_commercial_aerospace",
+    "title": "Commercial Aerospace — Deep Research Analysis (v3.8 R6)",
+    "domain": "Commercial Aerospace",
+    "entities": [],
+    "n_entities": 0,
+    "models_scored": 9,
+    "avg_score": 40.54,
+    "max_score": 49.61,
+    "min_score": 27.73
+  },
+  {
+    "case_id": "11_china_internet",
+    "title": "Chinese Internet Platforms — Deep Research Analysis (v3.9 R8 Frontier)",
+    "domain": "Chinese Internet Platforms",
+    "entities": [
+      "Tencent",
+      "Alibaba",
+      "Meituan",
+      "JD.com",
+      "Pinduoduo (PDD Holdings)",
+      "Baidu",
+      "Kuaishou",
+      "ByteDance"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.23,
+    "max_score": 32.03,
+    "min_score": 3.12
+  },
+  {
+    "case_id": "12_ev_batteries",
+    "title": "EV Battery Cell Manufacturers — Deep Research Analysis (v3.9.1 R9 Frontier+)",
+    "domain": "EV Battery Cell Manufacturers",
+    "entities": [
+      "The dominant Chinese A-share lithium-ion cell pure-play, listed on the Shenzhen ChiNext board with a March 2025 HKEX secondary listing prospectus (you identify ticker)",
+      "The battery sub-segment of a Shenzhen A-share auto OEM parent. Do **not** confuse with the Hong Kong-listed consumer electronics arm (different ticker, different business).",
+      "The Korean lithium-ion pure-play, KOSPI-listed in 2022 by spin-off from a chemicals parent",
+      "A Korean diversified electronics-and-batteries conglomerate, KOSPI-listed since the 1980s (different from #3 — separate parent group)",
+      "The Japanese conglomerate's Energy reporting segment. Issuer FY = April–March; calendar Q4 2024 = the issuer's FY-third-quarter disclosed in early February 2025",
+      "The battery-segment subsidiary of a Korean refining/chemicals parent (KOSPI). 100%-consolidated reportable segment.",
+      "The Chinese A-share specialist with strong ESS exposure and a consumer-cylindrical business, ChiNext-listed",
+      "The Hong Kong-listed Chinese cell manufacturer that IPO'd in October 2022 with a heavy GAC/Xpeng customer concentration"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 25.04,
+    "max_score": 42.19,
+    "min_score": 0
+  },
+  {
+    "case_id": "13_asset_managers",
+    "title": "Global Asset Managers — Deep Research Analysis (v3.8)",
+    "domain": "Global Asset Managers",
+    "entities": [
+      "BlackRock",
+      "Vanguard Group",
+      "Fidelity Investments",
+      "Franklin Resources",
+      "Amundi",
+      "DWS Group",
+      "Invesco",
+      "T. Rowe Price"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.97,
+    "max_score": 29.69,
+    "min_score": 6.25
+  },
+  {
+    "case_id": "14_mining_majors",
+    "title": "Global Mining Majors — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Mining Majors",
+    "entities": [
+      "BHP Group",
+      "Rio Tinto",
+      "Vale S.A.",
+      "Glencore",
+      "Freeport-McMoRan",
+      "Teck Resources",
+      "Antofagasta",
+      "MMG Limited"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.32,
+    "max_score": 24.22,
+    "min_score": 0
+  },
+  {
+    "case_id": "15_enterprise_saas",
+    "title": "Enterprise SaaS — Deep Research Analysis (v3.8 R8)",
+    "domain": "Enterprise SaaS",
+    "entities": [
+      "Salesforce",
+      "ServiceNow",
+      "Workday",
+      "Veeva Systems",
+      "Atlassian",
+      "Databricks",
+      "Snowflake",
+      "Datadog"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.98,
+    "max_score": 27.34,
+    "min_score": 1.95
+  },
+  {
+    "case_id": "16_insurance",
+    "title": "Global Insurance Giants — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Insurance Giants",
+    "entities": [
+      "Allianz SE",
+      "AXA SA",
+      "Zurich Insurance Group",
+      "Munich Re",
+      "MetLife Inc.",
+      "Prudential plc",
+      "Ping An Insurance",
+      "China Life Insurance"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.31,
+    "max_score": 35.94,
+    "min_score": 10.55
+  },
+  {
+    "case_id": "17_telecom",
+    "title": "Global Telecom Operators — Deep Research Analysis (v3.8 R8 Hardened)",
+    "domain": "Global Telecom Operators",
+    "entities": [
+      "AT&T",
+      "Verizon Communications",
+      "T-Mobile US",
+      "China Mobile",
+      "Orange",
+      "Telefónica",
+      "KDDI",
+      "Bharti Airtel"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.45,
+    "max_score": 29.69,
+    "min_score": 0
+  },
+  {
+    "case_id": "18_ev_automakers",
+    "title": "EV Automakers — Deep Research Analysis (v3.8 R8)",
+    "domain": "EV Automakers",
+    "entities": [
+      "Tesla",
+      "BYD",
+      "Zeekr",
+      "NIO",
+      "XPeng",
+      "Rivian",
+      "Lucid Group",
+      "Volkswagen Group (BEV segment)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.0,
+    "max_score": 26.17,
+    "min_score": 0.39
+  },
+  {
+    "case_id": "19_reits",
+    "title": "Global REITs — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global REITs",
+    "entities": [
+      "Prologis, Inc.",
+      "Goodman Group",
+      "American Tower Corporation",
+      "Equinix, Inc.",
+      "Welltower Inc.",
+      "Simon Property Group",
+      "Link REIT",
+      "Segro plc"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.02,
+    "max_score": 21.09,
+    "min_score": 0.39
+  },
+  {
+    "case_id": "20_beverages",
+    "title": "Global Beverages (Soft Drinks, Beer, Spirits) — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Beverages (Soft Drinks, Beer, Spirits)",
+    "entities": [
+      "The Coca-Cola Company",
+      "Keurig Dr Pepper",
+      "Monster Beverage",
+      "Anheuser-Busch InBev",
+      "Heineken N.V.",
+      "Asahi Group Holdings",
+      "Diageo plc",
+      "Pernod Ricard"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.26,
+    "max_score": 32.03,
+    "min_score": 13.67
+  },
+  {
+    "case_id": "21_apparel",
+    "title": "Global Apparel and Athleisure Brands — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Apparel and Athleisure Brands",
+    "entities": [
+      "Nike, Inc.",
+      "Adidas AG",
+      "Lululemon Athletica Inc.",
+      "Puma SE",
+      "Deckers Outdoor Corp. (Hoka)",
+      "Anta Sports Products Ltd.",
+      "Asics Corporation",
+      "On Holding AG"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.36,
+    "max_score": 22.66,
+    "min_score": 9.38
+  },
+  {
+    "case_id": "22_big_pharma",
+    "title": "Big Pharma — Deep Research Analysis (v3.8 R8)",
+    "domain": "Big Pharma",
+    "entities": [
+      "Eli Lilly",
+      "Novo Nordisk",
+      "Pfizer",
+      "Merck & Co.",
+      "AbbVie",
+      "Roche Holding",
+      "AstraZeneca",
+      "Takeda"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 14.58,
+    "max_score": 24.61,
+    "min_score": 0.0
+  },
+  {
+    "case_id": "23_industrial_conglomerates",
+    "title": "Industrial Conglomerates — Deep Research Analysis (v3.8 R8)",
+    "domain": "Industrial Conglomerates",
+    "entities": [
+      "Siemens AG",
+      "Hitachi Ltd",
+      "Honeywell International",
+      "3M Company",
+      "Mitsubishi Heavy Industries",
+      "ABB Ltd",
+      "Illinois Tool Works",
+      "Schneider Electric"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.84,
+    "max_score": 31.25,
+    "min_score": 8.59
+  },
+  {
+    "case_id": "24_generics",
+    "title": "Generics and Biosimilars — Deep Research Analysis (v3.8 R8)",
+    "domain": "Generics and Biosimilars",
+    "entities": [
+      "Teva Pharmaceutical Industries",
+      "Viatris",
+      "Sandoz Group",
+      "Sun Pharmaceutical Industries",
+      "Dr. Reddy's Laboratories",
+      "Aurobindo Pharma",
+      "Hikma Pharmaceuticals",
+      "Celltrion"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.62,
+    "max_score": 29.69,
+    "min_score": 0
+  },
+  {
+    "case_id": "25_solar",
+    "title": "Solar Manufacturers and Module Makers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Solar Manufacturers and Module Makers",
+    "entities": [
+      "LONGi Green Energy Technology",
+      "JinkoSolar Holding",
+      "Trina Solar",
+      "JA Solar Technology",
+      "Canadian Solar",
+      "First Solar",
+      "Hanwha Q CELLS (Hanwha Solutions)",
+      "Tongwei Co."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 9.72,
+    "max_score": 21.88,
+    "min_score": 0
+  },
+  {
+    "case_id": "26_stock_exchanges",
+    "title": "Stock Exchanges and Trading Venues — Deep Research Analysis (v3.8 R8)",
+    "domain": "Stock Exchanges and Trading Venues",
+    "entities": [
+      "Intercontinental Exchange (NYSE parent)",
+      "Nasdaq, Inc.",
+      "CME Group",
+      "London Stock Exchange Group",
+      "Deutsche Börse AG",
+      "Hong Kong Exchanges and Clearing",
+      "Japan Exchange Group",
+      "National Stock Exchange of India (private)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.84,
+    "max_score": 24.22,
+    "min_score": 2.34
+  },
+  {
+    "case_id": "27_qsr",
+    "title": "Quick Service Restaurants (QSR) — Deep Research Analysis (v3.8 R8)",
+    "domain": "Quick Service Restaurants (QSR)",
+    "entities": [
+      "McDonald's Corporation",
+      "Yum! Brands (KFC, Taco Bell, Pizza Hut)",
+      "Restaurant Brands International (Burger King, Tim Hortons, Popeyes)",
+      "Starbucks Corporation",
+      "Domino's Pizza",
+      "Wendy's Company",
+      "Yum China Holdings",
+      "Jollibee Foods Corporation"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.05,
+    "max_score": 28.52,
+    "min_score": 1.56
+  },
+  {
+    "case_id": "28_cybersec",
+    "title": "Cybersecurity Companies — Deep Research Analysis (v3.8 R8)",
+    "domain": "Cybersecurity Companies",
+    "entities": [
+      "Palo Alto Networks",
+      "CrowdStrike Holdings",
+      "Fortinet",
+      "Zscaler",
+      "Cloudflare",
+      "SentinelOne",
+      "Check Point Software",
+      "Cisco Systems (Security segment)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.23,
+    "max_score": 30.08,
+    "min_score": 8.2
+  },
+  {
+    "case_id": "29_steel",
+    "title": "Steel and Metals Producers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Steel and Metals Producers",
+    "entities": [
+      "ArcelorMittal",
+      "Nippon Steel Corporation",
+      "POSCO Holdings",
+      "Nucor Corporation",
+      "Baoshan Iron & Steel (Baosteel)",
+      "Tata Steel",
+      "Cleveland-Cliffs",
+      "Gerdau"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 21.35,
+    "max_score": 30.08,
+    "min_score": 11.72
+  },
+  {
+    "case_id": "30_industrial_gases",
+    "title": "Industrial Gases — Deep Research Analysis (v3.8 R8)",
+    "domain": "Industrial Gases",
+    "entities": [
+      "Linde plc",
+      "Air Liquide S.A.",
+      "Air Products and Chemicals",
+      "Nippon Sanso Holdings",
+      "Hangzhou Hangyang",
+      "Linde India",
+      "Messer SE & Co. KGaA",
+      "SOL Group S.p.A."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.1,
+    "max_score": 27.73,
+    "min_score": 8.98
+  },
+  {
+    "case_id": "31_construction_equip",
+    "title": "Construction and Heavy Equipment Makers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Construction and Heavy Equipment Makers",
+    "entities": [
+      "Caterpillar Inc.",
+      "Komatsu Ltd.",
+      "Doosan Bobcat",
+      "Liebherr Group",
+      "Volvo Construction Equipment (AB Volvo segment)",
+      "Hitachi Construction Machinery",
+      "Sany Heavy Industry",
+      "XCMG Construction Machinery"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 22.4,
+    "max_score": 34.38,
+    "min_score": 13.28
+  },
+  {
+    "case_id": "32_lithium",
+    "title": "Lithium and Critical Minerals — Deep Research Analysis (v3.8 R8)",
+    "domain": "Lithium and Critical Minerals",
+    "entities": [
+      "Albemarle Corporation",
+      "Sociedad Química y Minera de Chile",
+      "Pilbara Minerals",
+      "Ganfeng Lithium",
+      "Tianqi Lithium",
+      "Mineral Resources Limited",
+      "Liontown Resources",
+      "Sigma Lithium"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 16.97,
+    "max_score": 25.39,
+    "min_score": 8.59
+  },
+  {
+    "case_id": "33_auto_parts",
+    "title": "Tier-1 Auto Parts Suppliers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Tier-1 Auto Parts Suppliers",
+    "entities": [
+      "Robert Bosch GmbH",
+      "Denso Corporation",
+      "ZF Friedrichshafen AG",
+      "Magna International",
+      "Schaeffler AG",
+      "Aptiv PLC",
+      "Forvia (Faurecia + Hella)",
+      "Valeo SA"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 21.3,
+    "max_score": 30.08,
+    "min_score": 15.23
+  },
+  {
+    "case_id": "34_cdmo_cro",
+    "title": "CDMO and CRO (Pharma Outsourcing) — Deep Research Analysis (v3.8 R8)",
+    "domain": "CDMO and CRO (Pharma Outsourcing)",
+    "entities": [
+      "Lonza Group",
+      "Fujifilm Holdings (Diosynth Biotechnologies)",
+      "Samsung Biologics",
+      "WuXi Biologics",
+      "IQVIA Holdings",
+      "ICON plc",
+      "Charles River Laboratories",
+      "Thermo Fisher Scientific (PPD)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 22.01,
+    "max_score": 33.98,
+    "min_score": 5.08
+  },
+  {
+    "case_id": "35_online_brokers",
+    "title": "Online Brokers and Retail Trading Platforms — Deep Research Analysis (v3.8 R8)",
+    "domain": "Online Brokers and Retail Trading Platforms",
+    "entities": [
+      "Charles Schwab",
+      "Robinhood Markets",
+      "Interactive Brokers",
+      "Fidelity Investments",
+      "Tiger Brokers",
+      "Webull",
+      "Futu Holdings",
+      "eToro"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.13,
+    "max_score": 33.98,
+    "min_score": 17.19
+  },
+  {
+    "case_id": "36_power_gen",
+    "title": "Power Generation and Electric Utilities — Deep Research Analysis (v3.8 R8)",
+    "domain": "Power Generation and Electric Utilities",
+    "entities": [
+      "NextEra Energy",
+      "Duke Energy",
+      "Southern Company",
+      "Dominion Energy",
+      "Constellation Energy",
+      "Iberdrola",
+      "Enel",
+      "Électricité de France (EDF)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.75,
+    "max_score": 29.3,
+    "min_score": 4.3
+  },
+  {
+    "case_id": "37_logistics",
+    "title": "Global Logistics and Container Shipping — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Logistics and Container Shipping",
+    "entities": [
+      "A.P. Møller-Mærsk",
+      "Mediterranean Shipping Company (MSC)",
+      "CMA CGM Group",
+      "Hapag-Lloyd",
+      "COSCO Shipping Holdings",
+      "Ocean Network Express (ONE)",
+      "Evergreen Marine",
+      "ZIM Integrated Shipping Services"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.58,
+    "max_score": 28.52,
+    "min_score": 3.52
+  },
+  {
+    "case_id": "38_tobacco",
+    "title": "Global Tobacco Companies — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Tobacco Companies",
+    "entities": [
+      "Philip Morris International",
+      "Altria Group",
+      "British American Tobacco",
+      "Japan Tobacco",
+      "Imperial Brands",
+      "ITC Limited",
+      "KT&G Corporation",
+      "Scandinavian Tobacco Group"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.45,
+    "max_score": 34.77,
+    "min_score": 3.52
+  },
+  {
+    "case_id": "39_foundry",
+    "title": "Foundry and Semiconductor Manufacturing — Deep Research Analysis (v3.8 R8)",
+    "domain": "Foundry and Semiconductor Manufacturing",
+    "entities": [
+      "Taiwan Semiconductor Manufacturing Company",
+      "Samsung Electronics (Foundry Division)",
+      "Intel Corporation (Intel Foundry)",
+      "GlobalFoundries",
+      "United Microelectronics Corporation",
+      "Semiconductor Manufacturing International Corporation",
+      "Tower Semiconductor",
+      "Hua Hong Semiconductor"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 27.08,
+    "max_score": 39.45,
+    "min_score": 18.75
+  },
+  {
+    "case_id": "40_streaming",
+    "title": "Streaming Video and Music Services — Deep Research Analysis (v3.8 R8)",
+    "domain": "Streaming Video and Music Services",
+    "entities": [
+      "Netflix",
+      "Disney+ (DTC segment)",
+      "Spotify",
+      "Amazon Prime Video",
+      "YouTube (Premium / Music)",
+      "iQIYI",
+      "Warner Bros. Discovery Max",
+      "Paramount+"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 20.23,
+    "max_score": 25.0,
+    "min_score": 15.23
+  },
+  {
+    "case_id": "41_crypto",
+    "title": "Crypto Exchanges — Deep Research Analysis (v3.8 R8)",
+    "domain": "Crypto Exchanges",
+    "entities": [
+      "Coinbase",
+      "Binance",
+      "Kraken",
+      "OKX",
+      "Bybit",
+      "Upbit (Dunamu)",
+      "Crypto.com",
+      "HTX"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 16.28,
+    "max_score": 27.73,
+    "min_score": 0.0
+  },
+  {
+    "case_id": "42_packaged_food",
+    "title": "Packaged Food Companies — Deep Research Analysis (v3.8 R8)",
+    "domain": "Packaged Food Companies",
+    "entities": [
+      "Nestlé S.A.",
+      "Mondelez International",
+      "The Kraft Heinz Company",
+      "General Mills",
+      "Hershey",
+      "Conagra Brands",
+      "Danone S.A.",
+      "Associated British Foods"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.97,
+    "max_score": 31.25,
+    "min_score": 2.73
+  },
+  {
+    "case_id": "43_ecommerce",
+    "title": "Major E-commerce Platforms — Deep Research Analysis (v3.8 R8)",
+    "domain": "Major E-commerce Platforms",
+    "entities": [
+      "Amazon",
+      "Alibaba Group",
+      "JD.com",
+      "PDD Holdings (Pinduoduo / Temu)",
+      "Sea Limited (Shopee)",
+      "MercadoLibre",
+      "Rakuten Group",
+      "Coupang"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 16.75,
+    "max_score": 22.27,
+    "min_score": 10.55
+  },
+  {
+    "case_id": "44_smartphone_oem",
+    "title": "Smartphone OEMs — Deep Research Analysis (v3.8 R8)",
+    "domain": "Smartphone OEMs",
+    "entities": [
+      "Apple",
+      "Samsung Electronics",
+      "Xiaomi",
+      "OPPO",
+      "vivo",
+      "Transsion Holdings",
+      "Honor Device",
+      "Lenovo (Motorola)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 30.69,
+    "max_score": 41.02,
+    "min_score": 10.16
+  },
+  {
+    "case_id": "45_medical_devices",
+    "title": "Medical Devices — Deep Research Analysis (v3.8 R8)",
+    "domain": "Medical Devices",
+    "entities": [
+      "Medtronic plc",
+      "Johnson & Johnson MedTech",
+      "Abbott Laboratories",
+      "Stryker Corporation",
+      "Boston Scientific",
+      "Siemens Healthineers AG",
+      "Olympus Corporation",
+      "Edwards Lifesciences"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 21.14,
+    "max_score": 28.52,
+    "min_score": 4.69
+  },
+  {
+    "case_id": "46_refining",
+    "title": "Oil Refining and Downstream — Deep Research Analysis (v3.8 R8)",
+    "domain": "Oil Refining and Downstream",
+    "entities": [
+      "Marathon Petroleum",
+      "Valero Energy",
+      "Phillips 66",
+      "HF Sinclair",
+      "PBF Energy",
+      "Reliance Industries (O2C)",
+      "S-Oil Corporation",
+      "Sinopec (China Petroleum & Chemical)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 25.35,
+    "max_score": 32.42,
+    "min_score": 15.62
+  },
+  {
+    "case_id": "47_network_equip",
+    "title": "Networking and Telecom Equipment — Deep Research Analysis (v3.8 R8)",
+    "domain": "Networking and Telecom Equipment",
+    "entities": [
+      "Cisco Systems",
+      "Huawei Technologies",
+      "Nokia",
+      "Ericsson",
+      "Arista Networks",
+      "ZTE Corporation",
+      "NEC Corporation",
+      "Samsung Networks (Samsung Electronics Networks Business)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 28.86,
+    "max_score": 37.5,
+    "min_score": 18.75
+  },
+  {
+    "case_id": "48_memory_semi",
+    "title": "Memory Semiconductors (DRAM and NAND) — Deep Research Analysis (v3.8 R8)",
+    "domain": "Memory Semiconductors (DRAM and NAND)",
+    "entities": [
+      "Samsung Electronics",
+      "SK hynix",
+      "Micron Technology",
+      "Kioxia Holdings",
+      "Sandisk",
+      "YMTC (Yangtze Memory Technologies)",
+      "CXMT (ChangXin Memory Technologies)",
+      "Nanya Technology"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.52,
+    "max_score": 32.42,
+    "min_score": 18.36
+  },
+  {
+    "case_id": "49_pc_makers",
+    "title": "PC Makers and Workstation OEMs — Deep Research Analysis (v3.8 R8)",
+    "domain": "PC Makers and Workstation OEMs",
+    "entities": [
+      "Lenovo Group",
+      "HP Inc.",
+      "Dell Technologies",
+      "Apple Inc. (Mac segment)",
+      "ASUSTeK Computer",
+      "Acer Inc.",
+      "Fujitsu (Client Computing / FCCL)",
+      "Dynabook (Sharp subsidiary)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 16.15,
+    "max_score": 24.22,
+    "min_score": 6.64
+  },
+  {
+    "case_id": "50_hospitals",
+    "title": "Hospitals and Healthcare Providers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Hospitals and Healthcare Providers",
+    "entities": [
+      "HCA Healthcare",
+      "Tenet Healthcare",
+      "Universal Health Services",
+      "Community Health Systems",
+      "Ardent Health Partners",
+      "Acadia Healthcare",
+      "Fresenius SE & Co. KGaA (Helios segment)",
+      "Ramsay Health Care"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 22.31,
+    "max_score": 32.81,
+    "min_score": 10.16
+  },
+  {
+    "case_id": "51_wind_renewables",
+    "title": "Wind Turbine OEMs and Renewables — Deep Research Analysis (v3.8 R8)",
+    "domain": "Wind Turbine OEMs and Renewables",
+    "entities": [
+      "Vestas Wind Systems",
+      "Siemens Gamesa Renewable Energy (Siemens Energy)",
+      "GE Vernova",
+      "Nordex SE",
+      "Goldwind Science & Technology",
+      "Envision Energy",
+      "Mingyang Smart Energy",
+      "Suzlon Energy"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.18,
+    "max_score": 35.94,
+    "min_score": 14.84
+  },
+  {
+    "case_id": "52_health_insurance",
+    "title": "US Health Insurance and Managed Care — Deep Research Analysis (v3.8 R8)",
+    "domain": "US Health Insurance and Managed Care",
+    "entities": [
+      "UnitedHealth Group",
+      "Elevance Health",
+      "CVS Health (Aetna)",
+      "Cigna Group",
+      "Humana",
+      "Centene Corporation",
+      "Molina Healthcare",
+      "HCSC (Health Care Service Corp.)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.14,
+    "max_score": 26.56,
+    "min_score": 1.95
+  },
+  {
+    "case_id": "53_spirits",
+    "title": "Premium Spirits and Wines — Deep Research Analysis (v3.8 R8)",
+    "domain": "Premium Spirits and Wines",
+    "entities": [
+      "Diageo plc",
+      "Pernod Ricard SA",
+      "LVMH Moët Hennessy Louis Vuitton (Wines & Spirits segment)",
+      "Brown-Forman Corporation",
+      "Rémy Cointreau SA",
+      "Davide Campari-Milano N.V.",
+      "Becle, S.A.B. de C.V. (Jose Cuervo)",
+      "Suntory Holdings Limited"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 20.18,
+    "max_score": 29.3,
+    "min_score": 14.45
+  },
+  {
+    "case_id": "54_online_travel",
+    "title": "Online Travel and OTA — Deep Research Analysis (v3.8 R8)",
+    "domain": "Online Travel and OTA",
+    "entities": [
+      "Booking Holdings",
+      "Expedia Group",
+      "Airbnb",
+      "Trip.com Group",
+      "MakeMyTrip",
+      "Tongcheng Travel",
+      "Tripadvisor",
+      "Despegar.com"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.89,
+    "max_score": 29.69,
+    "min_score": 5.47
+  },
+  {
+    "case_id": "55_specialty_chem",
+    "title": "Specialty Chemicals — Deep Research Analysis (v3.8 R8)",
+    "domain": "Specialty Chemicals",
+    "entities": [
+      "DuPont de Nemours",
+      "Ecolab",
+      "Sherwin-Williams",
+      "Linde plc",
+      "Albemarle",
+      "Givaudan",
+      "Croda International",
+      "Symrise"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 20.75,
+    "max_score": 34.38,
+    "min_score": 5.86
+  },
+  {
+    "case_id": "56_datacenters",
+    "title": "Data Center Operators — Deep Research Analysis (v3.8 R8)",
+    "domain": "Data Center Operators",
+    "entities": [
+      "Equinix",
+      "Digital Realty Trust",
+      "GDS Holdings",
+      "NTT Global Data Centers",
+      "Iron Mountain Data Centers",
+      "CyrusOne (KKR/GIP-owned)",
+      "Vantage Data Centers (DigitalBridge/Silver Lake)",
+      "QTS Data Centers (Blackstone-owned)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.31,
+    "max_score": 32.42,
+    "min_score": 9.38
+  },
+  {
+    "case_id": "57_gaming",
+    "title": "Gaming Publishers and Console Makers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Gaming Publishers and Console Makers",
+    "entities": [
+      "Sony Interactive Entertainment (Sony Group)",
+      "Microsoft Gaming (incl. Xbox & Activision Blizzard)",
+      "Nintendo Co., Ltd.",
+      "Take-Two Interactive",
+      "Electronic Arts",
+      "Krafton, Inc.",
+      "Tencent (Interactive Entertainment Group)",
+      "NetEase, Inc."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 10.07,
+    "max_score": 16.8,
+    "min_score": 0.78
+  },
+  {
+    "case_id": "58_autonomous",
+    "title": "Autonomous Driving and Robotaxi — Deep Research Analysis (v3.8 R8)",
+    "domain": "Autonomous Driving and Robotaxi",
+    "entities": [
+      "Waymo (Alphabet)",
+      "Tesla (Robotaxi / FSD)",
+      "Zoox (Amazon)",
+      "Motional (Hyundai / Aptiv JV)",
+      "Baidu Apollo Go",
+      "Pony.ai",
+      "WeRide",
+      "AutoX"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 25.26,
+    "max_score": 34.38,
+    "min_score": 18.75
+  },
+  {
+    "case_id": "59_cruise",
+    "title": "Cruise Lines — Deep Research Analysis (v3.8 R8)",
+    "domain": "Cruise Lines",
+    "entities": [
+      "Carnival Corporation",
+      "Royal Caribbean Group",
+      "Norwegian Cruise Line Holdings",
+      "Viking Holdings",
+      "Lindblad Expeditions Holdings",
+      "MSC Cruises (MSC Group)",
+      "TUI Cruises / Hapag-Lloyd Cruises (TUI AG)",
+      "Hurtigruten Group"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 21.66,
+    "max_score": 34.38,
+    "min_score": 12.89
+  },
+  {
+    "case_id": "60_reinsurance",
+    "title": "Global Reinsurance — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Reinsurance",
+    "entities": [
+      "Munich Re",
+      "Swiss Re",
+      "Hannover Rück",
+      "SCOR SE",
+      "Berkshire Hathaway Reinsurance Group",
+      "Everest Group",
+      "RenaissanceRe",
+      "Lloyd's of London"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 11.5,
+    "max_score": 24.22,
+    "min_score": 0
+  },
+  {
+    "case_id": "61_edtech",
+    "title": "EdTech and Online Learning — Deep Research Analysis (v3.8 R8)",
+    "domain": "EdTech and Online Learning",
+    "entities": [
+      "Coursera",
+      "Duolingo",
+      "Chegg",
+      "Udemy",
+      "Stride (K12 Inc.)",
+      "Pearson",
+      "Nerdy",
+      "New Oriental Education"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 21.81,
+    "max_score": 31.64,
+    "min_score": 5.47
+  },
+  {
+    "case_id": "62_music",
+    "title": "Music Streaming and Recorded Music — Deep Research Analysis (v3.8 R8)",
+    "domain": "Music Streaming and Recorded Music",
+    "entities": [
+      "Spotify Technology S.A.",
+      "Universal Music Group N.V.",
+      "Warner Music Group Corp.",
+      "Tencent Music Entertainment Group",
+      "NetEase Cloud Music",
+      "SiriusXM Holdings Inc.",
+      "Sony Music Entertainment (Sony Group)",
+      "Apple Inc. (Apple Music)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.35,
+    "max_score": 34.77,
+    "min_score": 12.11
+  },
+  {
+    "case_id": "63_pipelines",
+    "title": "Pipelines and Midstream Energy — Deep Research Analysis (v3.8 R8)",
+    "domain": "Pipelines and Midstream Energy",
+    "entities": [
+      "Enterprise Products Partners",
+      "Enbridge Inc.",
+      "Energy Transfer LP",
+      "Kinder Morgan Inc.",
+      "Williams Companies",
+      "TC Energy Corporation",
+      "MPLX LP",
+      "ONEOK Inc."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 9.94,
+    "max_score": 22.66,
+    "min_score": 0
+  },
+  {
+    "case_id": "64_cement",
+    "title": "Cement and Building Materials — Deep Research Analysis (v3.8 R8)",
+    "domain": "Cement and Building Materials",
+    "entities": [
+      "Holcim Ltd",
+      "Heidelberg Materials AG",
+      "CRH plc",
+      "Cemex S.A.B. de C.V.",
+      "Anhui Conch Cement",
+      "UltraTech Cement Ltd",
+      "Cementos Argos",
+      "Taiheiyo Cement Corporation"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.76,
+    "max_score": 26.95,
+    "min_score": 0
+  },
+  {
+    "case_id": "65_indian_it",
+    "title": "Indian IT Services — Deep Research Analysis (v3.8 R8)",
+    "domain": "Indian IT Services",
+    "entities": [
+      "Tata Consultancy Services",
+      "Infosys",
+      "HCL Technologies",
+      "Wipro",
+      "Tech Mahindra",
+      "LTIMindtree",
+      "Mphasis",
+      "Coforge"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.14,
+    "max_score": 39.06,
+    "min_score": 0.78
+  },
+  {
+    "case_id": "66_casinos",
+    "title": "Casino and Integrated Resorts — Deep Research Analysis (v3.8 R8)",
+    "domain": "Casino and Integrated Resorts",
+    "entities": [
+      "Las Vegas Sands Corp.",
+      "MGM Resorts International",
+      "Wynn Resorts Limited",
+      "Caesars Entertainment",
+      "Galaxy Entertainment Group",
+      "SJM Holdings",
+      "Melco Resorts & Entertainment",
+      "Genting Singapore Limited"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.58,
+    "max_score": 30.47,
+    "min_score": 5.47
+  },
+  {
+    "case_id": "67_personal_care",
+    "title": "Personal Care and Beauty — Deep Research Analysis (v3.8 R8)",
+    "domain": "Personal Care and Beauty",
+    "entities": [
+      "L'Oréal S.A.",
+      "The Estée Lauder Companies Inc.",
+      "Procter & Gamble Co. (Beauty segment)",
+      "Unilever PLC (Beauty & Wellbeing)",
+      "Shiseido Company, Limited",
+      "Beiersdorf AG",
+      "Natura &Co Holding S.A.",
+      "LG H&H Co., Ltd."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.45,
+    "max_score": 31.25,
+    "min_score": 2.73
+  },
+  {
+    "case_id": "68_trucking",
+    "title": "Trucking and LTL Logistics — Deep Research Analysis (v3.8 R8)",
+    "domain": "Trucking and LTL Logistics",
+    "entities": [
+      "Old Dominion Freight Line",
+      "Saia, Inc.",
+      "XPO, Inc.",
+      "ArcBest Corporation",
+      "TFI International",
+      "Knight-Swift Transportation",
+      "Forward Air",
+      "Schneider National"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 10.91,
+    "max_score": 19.14,
+    "min_score": 0.78
+  },
+  {
+    "case_id": "69_ofs",
+    "title": "Oilfield Services — Deep Research Analysis (v3.8 R8)",
+    "domain": "Oilfield Services",
+    "entities": [
+      "SLB (Schlumberger)",
+      "Halliburton",
+      "Baker Hughes",
+      "Weatherford International",
+      "Tenaris",
+      "Patterson-UTI Energy",
+      "Saipem",
+      "Liberty Energy"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 16.97,
+    "max_score": 28.12,
+    "min_score": 0
+  },
+  {
+    "case_id": "70_ad_agencies",
+    "title": "Global Advertising Agencies — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Advertising Agencies",
+    "entities": [
+      "WPP plc",
+      "Omnicom Group",
+      "Publicis Groupe",
+      "Interpublic Group (IPG)",
+      "Dentsu Group",
+      "Havas N.V.",
+      "Hakuhodo DY Holdings",
+      "Stagwell Inc."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 16.91,
+    "max_score": 27.34,
+    "min_score": 8.83
+  },
+  {
+    "case_id": "71_robotics",
+    "title": "Industrial Robotics and Automation — Deep Research Analysis (v3.8 R8)",
+    "domain": "Industrial Robotics and Automation",
+    "entities": [
+      "FANUC Corporation",
+      "ABB Ltd",
+      "Yaskawa Electric",
+      "Rockwell Automation",
+      "Schneider Electric (Industrial Automation)",
+      "Siemens AG (Digital Industries)",
+      "Mitsubishi Electric (FA Systems)",
+      "Teradyne (Universal Robots)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.15,
+    "max_score": 22.66,
+    "min_score": 6.64
+  },
+  {
+    "case_id": "72_quantum",
+    "title": "Quantum Computing — Deep Research Analysis (v3.8 R8)",
+    "domain": "Quantum Computing",
+    "entities": [
+      "IBM Quantum",
+      "Google Quantum AI",
+      "IonQ",
+      "Rigetti Computing",
+      "D-Wave Quantum",
+      "Quantinuum (Honeywell)",
+      "PsiQuantum",
+      "Pasqal"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.71,
+    "max_score": 28.12,
+    "min_score": 13.67
+  },
+  {
+    "case_id": "73_space",
+    "title": "Space and Satellite Operators — Deep Research Analysis (v3.8 R8)",
+    "domain": "Space and Satellite Operators",
+    "entities": [
+      "SpaceX (Starlink)",
+      "Iridium Communications",
+      "Viasat",
+      "EchoStar (Hughes/Dish)",
+      "SES S.A.",
+      "Eutelsat Group (incl. OneWeb)",
+      "AST SpaceMobile",
+      "China Satcom"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 23.83,
+    "max_score": 30.47,
+    "min_score": 17.19
+  },
+  {
+    "case_id": "74_lab_tools",
+    "title": "Lab Tools and Diagnostics — Deep Research Analysis (v3.8 R8)",
+    "domain": "Lab Tools and Diagnostics",
+    "entities": [
+      "Thermo Fisher Scientific",
+      "Danaher Corporation",
+      "Agilent Technologies",
+      "Waters Corporation",
+      "Sartorius AG",
+      "Bio-Rad Laboratories",
+      "Bruker Corporation",
+      "Mettler-Toledo International"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 11.94,
+    "max_score": 25,
+    "min_score": 0
+  },
+  {
+    "case_id": "75_hydrogen",
+    "title": "Hydrogen and Clean Energy Tech — Deep Research Analysis (v3.8 R8)",
+    "domain": "Hydrogen and Clean Energy Tech",
+    "entities": [
+      "Plug Power Inc.",
+      "Bloom Energy Corporation",
+      "Ballard Power Systems",
+      "Nel ASA",
+      "ITM Power plc",
+      "thyssenkrupp nucera AG",
+      "Linde plc",
+      "Air Liquide S.A."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.01,
+    "max_score": 27.34,
+    "min_score": 8.98
+  },
+  {
+    "case_id": "76_gas_utilities",
+    "title": "US Gas Utilities — Deep Research Analysis (v3.8 R8)",
+    "domain": "US Gas Utilities",
+    "entities": [
+      "Atmos Energy",
+      "NiSource",
+      "Southwest Gas Holdings",
+      "Spire Inc.",
+      "New Jersey Resources",
+      "ONE Gas",
+      "Northwest Natural Holdings",
+      "Chesapeake Utilities"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 14.89,
+    "max_score": 34.77,
+    "min_score": 0.0
+  },
+  {
+    "case_id": "77_pharma_distribution",
+    "title": "Pharmaceutical Distribution — Deep Research Analysis (v3.8 R8)",
+    "domain": "Pharmaceutical Distribution",
+    "entities": [
+      "McKesson Corporation",
+      "Cencora (formerly AmerisourceBergen)",
+      "Cardinal Health",
+      "Sinopharm Group",
+      "Shanghai Pharmaceuticals Holding",
+      "China Resources Pharmaceutical",
+      "Medipal Holdings",
+      "PHOENIX Group Beteiligungs GmbH"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.53,
+    "max_score": 24.22,
+    "min_score": 10.55
+  },
+  {
+    "case_id": "78_enterprise_software_erp_crm_saas",
+    "title": "Enterprise Software (ERP/CRM/SaaS) — Deep Research Analysis (v3.8 R8)",
+    "domain": "Enterprise Software (ERP/CRM/SaaS)",
+    "entities": [
+      "Oracle",
+      "Salesforce",
+      "SAP",
+      "ServiceNow",
+      "Workday",
+      "Sage Group",
+      "Dassault Systèmes",
+      "Infor (Koch Industries subsidiary)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 20.57,
+    "max_score": 30.47,
+    "min_score": 10.94
+  },
+  {
+    "case_id": "79_legacy_auto_oems",
+    "title": "Legacy Auto OEMs — Deep Research Analysis (v3.8 R8)",
+    "domain": "Legacy Auto OEMs",
+    "entities": [
+      "Toyota Motor Corporation",
+      "Volkswagen AG",
+      "General Motors",
+      "Ford Motor Company",
+      "Stellantis N.V.",
+      "Nissan Motor Co.",
+      "Hyundai Motor Company",
+      "Mercedes-Benz Group"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.97,
+    "max_score": 23.44,
+    "min_score": 0
+  },
+  {
+    "case_id": "80_us_wireless_telecom_carriers",
+    "title": "US Wireless Telecom Carriers — Deep Research Analysis (v3.8 R8)",
+    "domain": "US Wireless Telecom Carriers",
+    "entities": [
+      "Verizon Communications",
+      "AT&T",
+      "T-Mobile US",
+      "EchoStar (Boost Mobile)",
+      "Comcast (Xfinity Mobile)",
+      "Charter Communications (Spectrum Mobile)",
+      "Altice USA (Optimum Mobile)",
+      "US Cellular (residual wireless/tower/spectrum)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 14.93,
+    "max_score": 24.22,
+    "min_score": 6.25
+  },
+  {
+    "case_id": "81_athletic_apparel_and_footwear_brands",
+    "title": "Athletic Apparel and Footwear Brands — Deep Research Analysis (v3.8 R8)",
+    "domain": "Athletic Apparel and Footwear Brands",
+    "entities": [
+      "Nike, Inc.",
+      "Adidas AG",
+      "Puma SE",
+      "Lululemon Athletica Inc.",
+      "Anta Sports Products Limited",
+      "Deckers Outdoor Corporation (HOKA / UGG)",
+      "On Holding AG",
+      "ASICS Corporation"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.28,
+    "max_score": 22.66,
+    "min_score": 0
+  },
+  {
+    "case_id": "82_lithium_mining_and_processing",
+    "title": "Lithium Mining and Processing — Deep Research Analysis (v3.8 R8)",
+    "domain": "Lithium Mining and Processing",
+    "entities": [
+      "Albemarle Corporation",
+      "Sociedad Química y Minera de Chile (SQM)",
+      "Ganfeng Lithium",
+      "Tianqi Lithium",
+      "Pilbara Minerals",
+      "Mineral Resources Limited",
+      "Liontown Resources",
+      "Sigma Lithium"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.01,
+    "max_score": 26.56,
+    "min_score": 10.55
+  },
+  {
+    "case_id": "83_container_shipping_lines",
+    "title": "Container Shipping Lines — Deep Research Analysis (v3.8 R8)",
+    "domain": "Container Shipping Lines",
+    "entities": [
+      "A.P. Moller-Maersk",
+      "Mediterranean Shipping Company (MSC)",
+      "CMA CGM Group",
+      "COSCO Shipping Holdings",
+      "Hapag-Lloyd AG",
+      "Ocean Network Express (ONE)",
+      "Evergreen Marine Corp",
+      "HMM Co., Ltd."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.14,
+    "max_score": 29.69,
+    "min_score": 7.81
+  },
+  {
+    "case_id": "84_data_center_and_tower_reits",
+    "title": "Data Center and Tower REITs — Deep Research Analysis (v3.8 R8)",
+    "domain": "Data Center and Tower REITs",
+    "entities": [
+      "Equinix",
+      "Digital Realty Trust",
+      "American Tower",
+      "Crown Castle",
+      "SBA Communications",
+      "China Tower",
+      "Cellnex Telecom",
+      "Keppel DC REIT"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.84,
+    "max_score": 25.78,
+    "min_score": 3.12
+  },
+  {
+    "case_id": "85_global_tobacco_companies",
+    "title": "Global Tobacco Companies — Deep Research Analysis (v3.8 R8)",
+    "domain": "Global Tobacco Companies",
+    "entities": [
+      "Philip Morris International",
+      "Altria Group",
+      "British American Tobacco",
+      "Japan Tobacco Inc.",
+      "Imperial Brands",
+      "ITC Limited",
+      "KT&G Corporation",
+      "China Tobacco International (HK)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 22.96,
+    "max_score": 33.98,
+    "min_score": 10.94
+  },
+  {
+    "case_id": "86_gold_mining_majors",
+    "title": "Gold Mining Majors — Deep Research Analysis (v3.8 R8)",
+    "domain": "Gold Mining Majors",
+    "entities": [
+      "Newmont Corporation",
+      "Barrick Gold",
+      "Agnico Eagle Mines",
+      "AngloGold Ashanti",
+      "Gold Fields",
+      "Kinross Gold",
+      "Northern Star Resources",
+      "Harmony Gold Mining"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.45,
+    "max_score": 31.64,
+    "min_score": 0
+  },
+  {
+    "case_id": "87_north_american_class_i_railroads",
+    "title": "North American Class I Railroads — Deep Research Analysis (v3.8 R8)",
+    "domain": "North American Class I Railroads",
+    "entities": [
+      "Union Pacific",
+      "BNSF Railway (Berkshire Hathaway)",
+      "CSX Corporation",
+      "Norfolk Southern",
+      "Canadian National Railway",
+      "Canadian Pacific Kansas City",
+      "Ferromex (Grupo México Transportes)",
+      "Ferrosur (Grupo México Transportes)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.85,
+    "max_score": 20.7,
+    "min_score": 1.17
+  },
+  {
+    "case_id": "88_auto_parts_and_component_suppliers",
+    "title": "Auto Parts and Component Suppliers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Auto Parts and Component Suppliers",
+    "entities": [
+      "Robert Bosch GmbH",
+      "Denso Corporation",
+      "Magna International",
+      "ZF Friedrichshafen AG",
+      "Aptiv PLC",
+      "Hyundai Mobis",
+      "Forvia",
+      "BorgWarner Inc."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 20.7,
+    "max_score": 31.25,
+    "min_score": 14.06
+  },
+  {
+    "case_id": "89_renewable_diesel_and_biofuel_producers",
+    "title": "Renewable Diesel and Biofuel Producers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Renewable Diesel and Biofuel Producers",
+    "entities": [
+      "Neste Oyj",
+      "Valero Energy (Diamond Green Diesel JV)",
+      "Darling Ingredients",
+      "TotalEnergies SE",
+      "Marathon Petroleum",
+      "Phillips 66",
+      "Eni S.p.A. (Enilive)",
+      "HF Sinclair"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 15.97,
+    "max_score": 22.27,
+    "min_score": 10.16
+  },
+  {
+    "case_id": "90_building_products_and_materials",
+    "title": "Building Products and Materials — Deep Research Analysis (v3.8 R8)",
+    "domain": "Building Products and Materials",
+    "entities": [
+      "Holcim AG",
+      "CRH plc",
+      "Heidelberg Materials",
+      "Cemex",
+      "Vulcan Materials",
+      "Eagle Materials",
+      "UltraTech Cement",
+      "Anhui Conch Cement"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 19.31,
+    "max_score": 34.77,
+    "min_score": 6.64
+  },
+  {
+    "case_id": "91_food_retail_and_grocery_chains",
+    "title": "Food Retail and Grocery Chains — Deep Research Analysis (v3.8 R8)",
+    "domain": "Food Retail and Grocery Chains",
+    "entities": [
+      "Walmart (incl. Sam's Club)",
+      "Costco Wholesale",
+      "Kroger",
+      "Ahold Delhaize",
+      "Tesco PLC",
+      "Jerónimo Martins",
+      "Aeon Co. Ltd.",
+      "Seven & i Holdings"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 23.0,
+    "max_score": 33.2,
+    "min_score": 12.5
+  },
+  {
+    "case_id": "92_cybersecurity_pure_play_vendors",
+    "title": "Cybersecurity Pure-Play Vendors — Deep Research Analysis (v3.8 R8)",
+    "domain": "Cybersecurity Pure-Play Vendors",
+    "entities": [
+      "Palo Alto Networks",
+      "CrowdStrike",
+      "Fortinet",
+      "Zscaler",
+      "SentinelOne",
+      "Rubrik",
+      "Check Point Software",
+      "Okta"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 13.76,
+    "max_score": 20.7,
+    "min_score": 0.39
+  },
+  {
+    "case_id": "93_generic_pharmaceutical_manufacturers",
+    "title": "Generic Pharmaceutical Manufacturers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Generic Pharmaceutical Manufacturers",
+    "entities": [
+      "Teva Pharmaceutical Industries",
+      "Viatris Inc.",
+      "Sandoz Group AG",
+      "Sun Pharmaceutical Industries",
+      "Dr. Reddy's Laboratories",
+      "Cipla Ltd.",
+      "Aurobindo Pharma",
+      "Hikma Pharmaceuticals"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 12.72,
+    "max_score": 26.17,
+    "min_score": 0
+  },
+  {
+    "case_id": "94_discount_retailers_and_mass_merchants",
+    "title": "Discount Retailers and Mass Merchants — Deep Research Analysis (v3.8 R8)",
+    "domain": "Discount Retailers and Mass Merchants",
+    "entities": [
+      "Walmart Inc.",
+      "Costco Wholesale Corporation",
+      "Target Corporation",
+      "Dollar General Corporation",
+      "TJX Companies, Inc.",
+      "Pepco Group N.V.",
+      "Aldi Süd Group",
+      "Action Holding B.V."
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 26.13,
+    "max_score": 37.11,
+    "min_score": 19.92
+  },
+  {
+    "case_id": "95_networking_and_switching_equipment",
+    "title": "Networking and Switching Equipment — Deep Research Analysis (v3.8 R8)",
+    "domain": "Networking and Switching Equipment",
+    "entities": [
+      "Cisco Systems",
+      "Arista Networks",
+      "Juniper Networks (last standalone FY ending June 2024)",
+      "Hewlett Packard Enterprise (Aruba/Networking)",
+      "Dell Technologies (Networking / PowerSwitch)",
+      "Extreme Networks",
+      "Huawei Technologies (Enterprise/Carrier Networking)",
+      "H3C Technologies (Unisplendour subsidiary)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 24.7,
+    "max_score": 37.5,
+    "min_score": 11.72
+  },
+  {
+    "case_id": "96_mortgage_reits",
+    "title": "Mortgage REITs — Deep Research Analysis (v3.8 R8)",
+    "domain": "Mortgage REITs",
+    "entities": [
+      "Annaly Capital Management",
+      "AGNC Investment Corp",
+      "Dynex Capital",
+      "Two Harbors Investment",
+      "Starwood Property Trust",
+      "Blackstone Mortgage Trust",
+      "Apollo Commercial Real Estate Finance",
+      "Arbor Realty Trust"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 9.94,
+    "max_score": 23.05,
+    "min_score": 0
+  },
+  {
+    "case_id": "97_copper_mining_majors",
+    "title": "Copper Mining Majors — Deep Research Analysis (v3.8 R8)",
+    "domain": "Copper Mining Majors",
+    "entities": [
+      "Freeport-McMoRan",
+      "Southern Copper Corporation",
+      "Antofagasta",
+      "First Quantum Minerals",
+      "Teck Resources",
+      "Ivanhoe Mines",
+      "BHP Group",
+      "Glencore"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 17.66,
+    "max_score": 35.16,
+    "min_score": 5.47
+  },
+  {
+    "case_id": "98_semiconductor_eda_and_ip_licensors",
+    "title": "Semiconductor EDA and IP Licensors — Deep Research Analysis (v3.8 R8)",
+    "domain": "Semiconductor EDA and IP Licensors",
+    "entities": [
+      "Synopsys",
+      "Cadence Design Systems",
+      "Siemens EDA (Siemens AG)",
+      "Arm Holdings",
+      "Ansys",
+      "Alphawave IP",
+      "Imagination Technologies",
+      "CEVA"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 31.25,
+    "max_score": 36.72,
+    "min_score": 21.09
+  },
+  {
+    "case_id": "99_asset_light_freight_forwarders_and_3pl",
+    "title": "Asset-Light Freight Forwarders and 3PL — Deep Research Analysis (v3.8 R8)",
+    "domain": "Asset-Light Freight Forwarders and 3PL",
+    "entities": [
+      "C.H. Robinson Worldwide",
+      "Expeditors International",
+      "Kuehne + Nagel International",
+      "DSV A/S",
+      "DHL Group (DGFF segment)",
+      "Nippon Express Holdings",
+      "Sinotrans Limited",
+      "CEVA Logistics (CMA CGM subsidiary)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 18.58,
+    "max_score": 28.52,
+    "min_score": 7.81
+  }
+]

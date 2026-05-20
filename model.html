@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model profile — DeepResearch Benchmark v3.8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<script src="assets/shell.js"></script>
+<script>document.write(renderTopbar('leaderboard'));</script>
+
+<main id="root">
+  <div style="text-align: center; padding: 80px 0; color: var(--text-muted)">Loading…</div>
+</main>
+
+<script>document.write(renderFooter());</script>
+<script>document.write(renderCmdK());</script>
+
+<script>
+function getParam(n) { return new URLSearchParams(location.search).get(n); }
+
+const slug = getParam('slug');
+if (!slug) {
+  document.getElementById('root').innerHTML = `<div class="container" style="padding: 64px 0; text-align: center"><p style="color: var(--text-muted); margin-bottom: 16px">No model specified.</p><a href="index.html#leaderboard" class="btn btn-primary">← Back to leaderboard</a></div>`;
+} else {
+  Promise.all([
+    fetch('data/leaderboard.json').then(r => r.json()),
+    fetch('data/cases.json').then(r => r.json()),
+  ]).then(([lb, cases]) => {
+    const m = lb.models.find(x => x.slug === slug);
+    if (!m) {
+      document.getElementById('root').innerHTML = `<div class="container" style="padding: 64px 0; text-align: center"><p style="color: var(--text-muted); margin-bottom: 16px">Model not found: ${slug}</p><a href="index.html#leaderboard" class="btn btn-primary">← Back to leaderboard</a></div>`;
+      return;
+    }
+    initCmdK(cases);
+    render(m, lb, cases);
+  });
+}
+
+function render(m, lb, cases) {
+  const rank = lb.models.findIndex(x => x.slug === m.slug) + 1;
+  const total = lb.models.length;
+  const perCaseList = Object.entries(m.per_case).map(([cid, s]) => {
+    const c = cases.find(c => c.case_id === cid);
+    return { case_id: cid, score: s, title: c?.title || cid, domain: c?.domain || '' };
+  });
+  const wins = [...perCaseList].sort((a, b) => b.score - a.score).slice(0, 5);
+  const losses = [...perCaseList].sort((a, b) => a.score - b.score).slice(0, 5);
+
+  document.getElementById('root').innerHTML = `
+    <section class="section" style="padding: 48px 0 28px">
+      <div class="container">
+        <a href="index.html#leaderboard" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px">← Back to leaderboard</a>
+        <p class="section-eyebrow">Model profile · rank ${rank} of ${total}</p>
+        <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px">
+          <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.025em; margin: 0; color: var(--text)">${m.name}</h1>
+          <span class="tier tier-${m.tier}">Tier ${m.tier}</span>
+        </div>
+        <p class="mono" style="color: var(--text-muted); font-size: 12px; margin: 0 0 28px">${m.slug}</p>
+
+        <div class="stat-row" style="border-radius: 4px; overflow: hidden; border: 1px solid var(--border-faint); border-top: 1px solid var(--border-faint); border-bottom: 1px solid var(--border-faint)">
+          <div class="stat-cell"><div class="num">${m.avg_pct.toFixed(2)}<span class="unit">%</span></div><div class="lbl">Average</div></div>
+          <div class="stat-cell"><div class="num">${m.median_pct.toFixed(2)}<span class="unit">%</span></div><div class="lbl">Median</div></div>
+          <div class="stat-cell"><div class="num">${m.pass_n}<span class="unit"> /100</span></div><div class="lbl">In pass band</div></div>
+          <div class="stat-cell"><div class="num">${m.avg_chars.toLocaleString()}</div><div class="lbl">Avg out chars</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-eyebrow">Score range</p>
+        <h2 class="section-title-sm">Min, average, and max across 100 cases.</h2>
+        <div class="card card-pad-lg">
+          <div class="range-track" style="height: 12px">
+            <div class="range-pass-band" style="left: ${(20/60)*100}%; right: ${100 - (35/60)*100}%"></div>
+            <div class="range-marker" style="left: ${(m.min_pct/60)*100}%; background: var(--hard)" title="min ${m.min_pct.toFixed(1)}%"></div>
+            <div class="range-marker" style="left: ${(m.avg_pct/60)*100}%; background: var(--accent); width: 14px; height: 14px" title="avg ${m.avg_pct.toFixed(2)}%"></div>
+            <div class="range-marker" style="left: ${(m.max_pct/60)*100}%; background: var(--pass)" title="max ${m.max_pct.toFixed(1)}%"></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; font-size: 13px">
+            <div><span class="mono" style="font-weight: 700; color: var(--hard)">${m.min_pct.toFixed(1)}%</span> <span style="color: var(--text-muted); font-size: 11px">min</span></div>
+            <div style="text-align: center"><span class="mono" style="font-weight: 700; color: var(--accent)">${m.avg_pct.toFixed(2)}%</span> <span style="color: var(--text-muted); font-size: 11px">avg · σ ${m.stdev_pct.toFixed(1)}</span></div>
+            <div style="text-align: right"><span class="mono" style="font-weight: 700; color: var(--pass)">${m.max_pct.toFixed(1)}%</span> <span style="color: var(--text-muted); font-size: 11px">max</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-eyebrow">Distribution</p>
+        <h2 class="section-title-sm">Cases by score bucket.</h2>
+        <div class="card card-pad-lg">
+          <canvas id="dist-chart" height="120"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+          <div>
+            <p class="section-eyebrow">Best 5 cases</p>
+            <h2 class="section-title-sm">Highest scores.</h2>
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              ${wins.map(w => `<a href="case.html?id=${encodeURIComponent(w.case_id)}" class="card card-hover" style="padding: 12px 14px; display: flex; align-items: center; gap: 10px"><div style="flex: 1; min-width: 0"><div style="font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">${w.domain || w.title}</div><div class="mono" style="font-size: 10px; color: var(--text-muted)">${w.case_id}</div></div><span class="pill ${scoreClass(w.score)}">${w.score.toFixed(1)}%</span></a>`).join('')}
+            </div>
+          </div>
+          <div>
+            <p class="section-eyebrow">Worst 5 cases</p>
+            <h2 class="section-title-sm">Lowest scores.</h2>
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              ${losses.map(l => `<a href="case.html?id=${encodeURIComponent(l.case_id)}" class="card card-hover" style="padding: 12px 14px; display: flex; align-items: center; gap: 10px"><div style="flex: 1; min-width: 0"><div style="font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">${l.domain || l.title}</div><div class="mono" style="font-size: 10px; color: var(--text-muted)">${l.case_id}</div></div><span class="pill ${scoreClass(l.score)}">${l.score.toFixed(1)}%</span></a>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 16px">
+          <div>
+            <p class="section-eyebrow">All cases</p>
+            <h2 class="section-title-sm">${m.name} on all 100 cases.</h2>
+          </div>
+          <input id="case-filter" class="input" placeholder="Filter…" style="width: 220px">
+        </div>
+        <div class="card" style="overflow: hidden">
+          <div style="overflow-x: auto">
+            <table class="tbl">
+              <thead><tr><th style="width: 180px">Case</th><th>Domain</th><th style="width: 90px; text-align: right">Score</th><th style="width: 80px; text-align: center">Verdict</th><th style="width: 60px"></th></tr></thead>
+              <tbody id="all-tbody">
+                ${perCaseList.sort((a, b) => b.score - a.score).map(p => {
+                  const v = p.score >= 20 && p.score <= 35 ? 'pass' : p.score > 35 ? 'too_easy' : 'too_hard';
+                  return `<tr class="row" data-search="${(p.case_id + ' ' + p.title + ' ' + p.domain).toLowerCase()}"><td class="mono" style="font-size: 11px; color: var(--text-muted)">${p.case_id}</td><td style="color: var(--text)">${p.domain || p.title}</td><td style="text-align: right"><span class="pill ${scoreClass(p.score)}">${p.score.toFixed(1)}%</span></td><td style="text-align: center">${verdictBadge(v)}</td><td style="text-align: right"><a href="case.html?id=${encodeURIComponent(p.case_id)}" style="font-size: 12px; color: var(--accent)">View →</a></td></tr>`;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  new Chart(document.getElementById('dist-chart'), {
+    type: 'bar',
+    data: {
+      labels: ['0–10', '10–20', '20–30', '30–40', '40–50', '50–60', '>60'],
+      datasets: [{
+        data: m.histogram,
+        backgroundColor: m.histogram.map((_, i) => i < 2 ? '#fca5a5' : i < 4 ? '#5eead4' : '#93c5fd'),
+        borderColor: '#fff',
+        borderWidth: 0,
+        borderRadius: 3,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.parsed.y + ' cases' } } },
+      scales: { y: { beginAtZero: true, grid: { color: '#ede9df' }, ticks: { font: { size: 11, family: 'JetBrains Mono' } } }, x: { grid: { display: false }, ticks: { font: { size: 11, family: 'JetBrains Mono' } } } },
+    },
+  });
+
+  document.getElementById('case-filter').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase().trim();
+    document.querySelectorAll('#all-tbody .row').forEach(r => {
+      r.style.display = (!q || r.dataset.search.includes(q)) ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>
