@@ -287,7 +287,8 @@ body.scrolled .topbar { border-bottom-color: var(--border-soft); background: rgb
 }
 .stat-cell {
   background: var(--bg);
-  padding: 24px 20px;
+  padding: 28px 20px;
+  text-align: center;
 }
 .stat-cell .num {
   font-size: 32px;
