@@ -2,7 +2,7 @@
   {
     "case_id": "01_ai_foundation_labs",
     "title": "Global AI Foundation Model Labs — Deep Research Analysis",
-    "domain": "Global AI Foundation Model Labs",
+    "domain": "Global AI Foundation Model Labs — Deep Research Analysis",
     "entities": [
       "OpenAI",
       "Anthropic",
@@ -14,15 +14,15 @@
       "01.AI (Zero-One AI)"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 65.93,
-    "max_score": 78.12,
-    "min_score": 57.81
+    "models_scored": 7,
+    "avg_score": 64.29,
+    "max_score": 79.69,
+    "min_score": 52.34
   },
   {
     "case_id": "02_cloud_hyperscalers",
     "title": "Global Cloud Hyperscalers — Deep Research Analysis (v3.8 R6 Hardened)",
-    "domain": "Global Cloud Hyperscalers",
+    "domain": "Global Cloud Hyperscalers — Deep Research Analysis (v3.8 R6 Hardened)",
     "entities": [
       "AWS",
       "Microsoft Azure",
@@ -34,15 +34,15 @@
       "Baidu AI Cloud"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 31.81,
-    "max_score": 47.27,
-    "min_score": 21.09
+    "models_scored": 8,
+    "avg_score": 33.54,
+    "max_score": 41.41,
+    "min_score": 27.34
   },
   {
     "case_id": "03_semi_equipment",
     "title": "Global Semiconductor Equipment — Deep Research Analysis (v3.8 R6 Hardened)",
-    "domain": "Global Semiconductor Equipment",
+    "domain": "Global Semiconductor Equipment — Deep Research Analysis (v3.8 R6 Hardened)",
     "entities": [
       "ASML",
       "Applied Materials",
@@ -55,14 +55,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 44.23,
-    "max_score": 64.06,
-    "min_score": 32.03
+    "avg_score": 47.57,
+    "max_score": 75.78,
+    "min_score": 19.92
   },
   {
     "case_id": "04_global_banking",
     "title": "Global Banking G-SIBs — Deep Research Analysis (v3.8 R6 Hardened)",
-    "domain": "Global Banking G-SIBs",
+    "domain": "Global Banking G-SIBs — Deep Research Analysis (v3.8 R6 Hardened)",
     "entities": [
       "JPMorgan Chase",
       "Bank of America",
@@ -74,15 +74,15 @@
       "UBS Group"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 61.37,
-    "max_score": 86.33,
-    "min_score": 28.12
+    "models_scored": 8,
+    "avg_score": 48.88,
+    "max_score": 82.03,
+    "min_score": 30.08
   },
   {
     "case_id": "05_oil_gas_transition",
     "title": "Global Oil & Gas Transition — Deep Research Analysis (v3.8 R6)",
-    "domain": "Global Oil & Gas Transition",
+    "domain": "Global Oil & Gas Transition — Deep Research Analysis (v3.8 R6)",
     "entities": [
       "ExxonMobil",
       "Chevron",
@@ -94,15 +94,15 @@
       "ConocoPhillips"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 51.43,
-    "max_score": 77.34,
-    "min_score": 39.06
+    "models_scored": 8,
+    "avg_score": 49.71,
+    "max_score": 72.27,
+    "min_score": 9.38
   },
   {
     "case_id": "06_defense_primes",
     "title": "Global Defense Primes — Deep Research Analysis (v3.8 R6)",
-    "domain": "Global Defense Primes",
+    "domain": "Global Defense Primes — Deep Research Analysis (v3.8 R6)",
     "entities": [
       "Lockheed Martin",
       "RTX Corporation",
@@ -114,15 +114,15 @@
       "Leonardo"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 60.46,
-    "max_score": 89.84,
-    "min_score": 34.77
+    "models_scored": 8,
+    "avg_score": 66.94,
+    "max_score": 92.19,
+    "min_score": 32.03
   },
   {
     "case_id": "07_luxury_goods",
     "title": "Global Luxury Goods — Deep Research Analysis (v3.8 R6)",
-    "domain": "Global Luxury Goods",
+    "domain": "Global Luxury Goods — Deep Research Analysis (v3.8 R6)",
     "entities": [
       "LVMH",
       "Kering",
@@ -135,14 +135,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 74.0,
-    "max_score": 100.0,
-    "min_score": 43.36
+    "avg_score": 83.07,
+    "max_score": 90.62,
+    "min_score": 75.0
   },
   {
     "case_id": "08_payment_networks",
     "title": "Global Payment Networks & Fintech — Deep Research Analysis (v3.8 R6)",
-    "domain": "Global Payment Networks & Fintech",
+    "domain": "Global Payment Networks & Fintech — Deep Research Analysis (v3.8 R6)",
     "entities": [
       "Visa",
       "Mastercard",
@@ -154,15 +154,15 @@
       "Klarna"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 63.41,
-    "max_score": 81.25,
-    "min_score": 53.12
+    "models_scored": 8,
+    "avg_score": 59.77,
+    "max_score": 67.58,
+    "min_score": 51.95
   },
   {
     "case_id": "09_biotech_platforms",
     "title": "Global Biotech Platforms — Deep Research Analysis (v3.8 R6)",
-    "domain": "Global Biotech Platforms",
+    "domain": "Global Biotech Platforms — Deep Research Analysis (v3.8 R6)",
     "entities": [
       "Vertex",
       "Regeneron",
@@ -175,9 +175,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 73.26,
-    "max_score": 87.5,
-    "min_score": 48.05
+    "avg_score": 74.89,
+    "max_score": 83.59,
+    "min_score": 58.98
   },
   {
     "case_id": "100_off_price_and_treasure_hunt_retailers",
@@ -195,25 +195,25 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 14.37,
+    "avg_score": 26.13,
     "max_score": 32.42,
-    "min_score": 0.39
+    "min_score": 19.14
   },
   {
     "case_id": "10_commercial_aerospace",
     "title": "Commercial Aerospace — Deep Research Analysis (v3.8 R6)",
-    "domain": "Commercial Aerospace",
+    "domain": "Commercial Aerospace — Deep Research Analysis (v3.8 R6)",
     "entities": [],
     "n_entities": 0,
-    "models_scored": 9,
-    "avg_score": 40.54,
-    "max_score": 49.61,
-    "min_score": 27.73
+    "models_scored": 8,
+    "avg_score": 36.28,
+    "max_score": 49.22,
+    "min_score": 20.7
   },
   {
     "case_id": "11_china_internet",
     "title": "Chinese Internet Platforms — Deep Research Analysis (v3.9 R8 Frontier)",
-    "domain": "Chinese Internet Platforms",
+    "domain": "Chinese Internet Platforms — Deep Research Analysis (v3.9 R8 Frontier)",
     "entities": [
       "Tencent",
       "Alibaba",
@@ -225,30 +225,21 @@
       "ByteDance"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 19.23,
-    "max_score": 32.03,
-    "min_score": 3.12
+    "models_scored": 8,
+    "avg_score": 30.22,
+    "max_score": 35.94,
+    "min_score": 25.78
   },
   {
     "case_id": "12_ev_batteries",
     "title": "EV Battery Cell Manufacturers — Deep Research Analysis (v3.9.1 R9 Frontier+)",
     "domain": "EV Battery Cell Manufacturers",
-    "entities": [
-      "The dominant Chinese A-share lithium-ion cell pure-play, listed on the Shenzhen ChiNext board with a March 2025 HKEX secondary listing prospectus (you identify ticker)",
-      "The battery sub-segment of a Shenzhen A-share auto OEM parent. Do **not** confuse with the Hong Kong-listed consumer electronics arm (different ticker, different business).",
-      "The Korean lithium-ion pure-play, KOSPI-listed in 2022 by spin-off from a chemicals parent",
-      "A Korean diversified electronics-and-batteries conglomerate, KOSPI-listed since the 1980s (different from #3 — separate parent group)",
-      "The Japanese conglomerate's Energy reporting segment. Issuer FY = April–March; calendar Q4 2024 = the issuer's FY-third-quarter disclosed in early February 2025",
-      "The battery-segment subsidiary of a Korean refining/chemicals parent (KOSPI). 100%-consolidated reportable segment.",
-      "The Chinese A-share specialist with strong ESS exposure and a consumer-cylindrical business, ChiNext-listed",
-      "The Hong Kong-listed Chinese cell manufacturer that IPO'd in October 2022 with a heavy GAC/Xpeng customer concentration"
-    ],
-    "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 25.04,
-    "max_score": 42.19,
-    "min_score": 0
+    "entities": [],
+    "n_entities": 0,
+    "models_scored": 8,
+    "avg_score": 33.74,
+    "max_score": 42.97,
+    "min_score": 1.56
   },
   {
     "case_id": "13_asset_managers",
@@ -266,9 +257,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.97,
-    "max_score": 29.69,
-    "min_score": 6.25
+    "avg_score": 23.61,
+    "max_score": 31.25,
+    "min_score": 7.03
   },
   {
     "case_id": "14_mining_majors",
@@ -286,9 +277,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 15.32,
-    "max_score": 24.22,
-    "min_score": 0
+    "avg_score": 20.44,
+    "max_score": 30.08,
+    "min_score": 7.42
   },
   {
     "case_id": "15_enterprise_saas",
@@ -306,9 +297,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 13.98,
-    "max_score": 27.34,
-    "min_score": 1.95
+    "avg_score": 22.31,
+    "max_score": 28.12,
+    "min_score": 5.08
   },
   {
     "case_id": "16_insurance",
@@ -326,9 +317,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.31,
+    "avg_score": 26.87,
     "max_score": 35.94,
-    "min_score": 10.55
+    "min_score": 14.84
   },
   {
     "case_id": "17_telecom",
@@ -346,9 +337,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 15.45,
-    "max_score": 29.69,
-    "min_score": 0
+    "avg_score": 20.01,
+    "max_score": 34.77,
+    "min_score": 0.0
   },
   {
     "case_id": "18_ev_automakers",
@@ -366,14 +357,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.0,
-    "max_score": 26.17,
-    "min_score": 0.39
+    "avg_score": 16.41,
+    "max_score": 25.78,
+    "min_score": 3.12
   },
   {
     "case_id": "19_reits",
     "title": "Global REITs — Deep Research Analysis (v3.8 R8)",
-    "domain": "Global REITs",
+    "domain": "Global REITs (Real Estate Investment Trusts)",
     "entities": [
       "Prologis, Inc.",
       "Goodman Group",
@@ -386,9 +377,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 15.02,
-    "max_score": 21.09,
-    "min_score": 0.39
+    "avg_score": 19.18,
+    "max_score": 28.12,
+    "min_score": 7.42
   },
   {
     "case_id": "20_beverages",
@@ -406,9 +397,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.26,
-    "max_score": 32.03,
-    "min_score": 13.67
+    "avg_score": 24.61,
+    "max_score": 29.69,
+    "min_score": 19.92
   },
   {
     "case_id": "21_apparel",
@@ -426,14 +417,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.36,
-    "max_score": 22.66,
-    "min_score": 9.38
+    "avg_score": 20.83,
+    "max_score": 28.12,
+    "min_score": 14.06
   },
   {
     "case_id": "22_big_pharma",
     "title": "Big Pharma — Deep Research Analysis (v3.8 R8)",
-    "domain": "Big Pharma",
+    "domain": "Big Pharma (Major Branded Drug Makers)",
     "entities": [
       "Eli Lilly",
       "Novo Nordisk",
@@ -446,8 +437,8 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 14.58,
-    "max_score": 24.61,
+    "avg_score": 17.1,
+    "max_score": 36.33,
     "min_score": 0.0
   },
   {
@@ -466,9 +457,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.84,
-    "max_score": 31.25,
-    "min_score": 8.59
+    "avg_score": 21.57,
+    "max_score": 33.98,
+    "min_score": 0.0
   },
   {
     "case_id": "24_generics",
@@ -486,9 +477,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.62,
-    "max_score": 29.69,
-    "min_score": 0
+    "avg_score": 23.48,
+    "max_score": 30.47,
+    "min_score": 16.02
   },
   {
     "case_id": "25_solar",
@@ -506,9 +497,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 9.72,
-    "max_score": 21.88,
-    "min_score": 0
+    "avg_score": 18.45,
+    "max_score": 29.69,
+    "min_score": 5.47
   },
   {
     "case_id": "26_stock_exchanges",
@@ -526,9 +517,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 15.84,
-    "max_score": 24.22,
-    "min_score": 2.34
+    "avg_score": 23.92,
+    "max_score": 35.55,
+    "min_score": 5.08
   },
   {
     "case_id": "27_qsr",
@@ -546,9 +537,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.05,
-    "max_score": 28.52,
-    "min_score": 1.56
+    "avg_score": 24.35,
+    "max_score": 35.16,
+    "min_score": 1.17
   },
   {
     "case_id": "28_cybersec",
@@ -566,9 +557,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.23,
-    "max_score": 30.08,
-    "min_score": 8.2
+    "avg_score": 27.47,
+    "max_score": 35.94,
+    "min_score": 18.75
   },
   {
     "case_id": "29_steel",
@@ -586,9 +577,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 21.35,
-    "max_score": 30.08,
-    "min_score": 11.72
+    "avg_score": 24.31,
+    "max_score": 31.64,
+    "min_score": 7.42
   },
   {
     "case_id": "30_industrial_gases",
@@ -606,9 +597,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 15.1,
-    "max_score": 27.73,
-    "min_score": 8.98
+    "avg_score": 18.58,
+    "max_score": 24.61,
+    "min_score": 2.34
   },
   {
     "case_id": "31_construction_equip",
@@ -626,9 +617,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 22.4,
-    "max_score": 34.38,
-    "min_score": 13.28
+    "avg_score": 22.87,
+    "max_score": 26.95,
+    "min_score": 17.58
   },
   {
     "case_id": "32_lithium",
@@ -646,9 +637,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 16.97,
-    "max_score": 25.39,
-    "min_score": 8.59
+    "avg_score": 20.7,
+    "max_score": 26.56,
+    "min_score": 10.94
   },
   {
     "case_id": "33_auto_parts",
@@ -666,9 +657,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 21.3,
-    "max_score": 30.08,
-    "min_score": 15.23
+    "avg_score": 23.91,
+    "max_score": 34.77,
+    "min_score": 5.08
   },
   {
     "case_id": "34_cdmo_cro",
@@ -686,9 +677,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 22.01,
-    "max_score": 33.98,
-    "min_score": 5.08
+    "avg_score": 26.39,
+    "max_score": 30.08,
+    "min_score": 22.27
   },
   {
     "case_id": "35_online_brokers",
@@ -706,9 +697,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.13,
-    "max_score": 33.98,
-    "min_score": 17.19
+    "avg_score": 29.25,
+    "max_score": 32.03,
+    "min_score": 22.27
   },
   {
     "case_id": "36_power_gen",
@@ -726,9 +717,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.75,
-    "max_score": 29.3,
-    "min_score": 4.3
+    "avg_score": 24.7,
+    "max_score": 40.23,
+    "min_score": 6.64
   },
   {
     "case_id": "37_logistics",
@@ -746,9 +737,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 18.58,
-    "max_score": 28.52,
-    "min_score": 3.52
+    "avg_score": 18.79,
+    "max_score": 24.61,
+    "min_score": 11.72
   },
   {
     "case_id": "38_tobacco",
@@ -766,9 +757,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.45,
-    "max_score": 34.77,
-    "min_score": 3.52
+    "avg_score": 25.22,
+    "max_score": 35.16,
+    "min_score": 10.55
   },
   {
     "case_id": "39_foundry",
@@ -786,9 +777,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 27.08,
-    "max_score": 39.45,
-    "min_score": 18.75
+    "avg_score": 30.38,
+    "max_score": 36.33,
+    "min_score": 19.53
   },
   {
     "case_id": "40_streaming",
@@ -806,9 +797,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 20.23,
-    "max_score": 25.0,
-    "min_score": 15.23
+    "avg_score": 25.17,
+    "max_score": 30.86,
+    "min_score": 13.28
   },
   {
     "case_id": "41_crypto",
@@ -825,10 +816,10 @@
       "HTX"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 16.28,
-    "max_score": 27.73,
-    "min_score": 0.0
+    "models_scored": 8,
+    "avg_score": 17.29,
+    "max_score": 19.92,
+    "min_score": 15.23
   },
   {
     "case_id": "42_packaged_food",
@@ -846,9 +837,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.97,
-    "max_score": 31.25,
-    "min_score": 2.73
+    "avg_score": 24.96,
+    "max_score": 29.3,
+    "min_score": 10.16
   },
   {
     "case_id": "43_ecommerce",
@@ -866,9 +857,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 16.75,
-    "max_score": 22.27,
-    "min_score": 10.55
+    "avg_score": 26.26,
+    "max_score": 34.77,
+    "min_score": 4.69
   },
   {
     "case_id": "44_smartphone_oem",
@@ -886,9 +877,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 30.69,
-    "max_score": 41.02,
-    "min_score": 10.16
+    "avg_score": 37.59,
+    "max_score": 48.05,
+    "min_score": 30.86
   },
   {
     "case_id": "45_medical_devices",
@@ -906,9 +897,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 21.14,
-    "max_score": 28.52,
-    "min_score": 4.69
+    "avg_score": 29.73,
+    "max_score": 35.55,
+    "min_score": 19.14
   },
   {
     "case_id": "46_refining",
@@ -926,9 +917,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 25.35,
-    "max_score": 32.42,
-    "min_score": 15.62
+    "avg_score": 31.16,
+    "max_score": 34.38,
+    "min_score": 27.73
   },
   {
     "case_id": "47_network_equip",
@@ -946,9 +937,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 28.86,
-    "max_score": 37.5,
-    "min_score": 18.75
+    "avg_score": 27.34,
+    "max_score": 33.2,
+    "min_score": 8.98
   },
   {
     "case_id": "48_memory_semi",
@@ -966,9 +957,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.52,
-    "max_score": 32.42,
-    "min_score": 18.36
+    "avg_score": 26.74,
+    "max_score": 34.77,
+    "min_score": 21.09
   },
   {
     "case_id": "49_pc_makers",
@@ -986,9 +977,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 16.15,
-    "max_score": 24.22,
-    "min_score": 6.64
+    "avg_score": 20.88,
+    "max_score": 29.69,
+    "min_score": 3.12
   },
   {
     "case_id": "50_hospitals",
@@ -1006,9 +997,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 22.31,
-    "max_score": 32.81,
-    "min_score": 10.16
+    "avg_score": 29.12,
+    "max_score": 36.33,
+    "min_score": 21.48
   },
   {
     "case_id": "51_wind_renewables",
@@ -1026,14 +1017,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.18,
-    "max_score": 35.94,
-    "min_score": 14.84
+    "avg_score": 26.09,
+    "max_score": 34.38,
+    "min_score": 12.11
   },
   {
     "case_id": "52_health_insurance",
     "title": "US Health Insurance and Managed Care — Deep Research Analysis (v3.8 R8)",
-    "domain": "US Health Insurance and Managed Care",
+    "domain": "Health Insurance and Managed Care",
     "entities": [
       "UnitedHealth Group",
       "Elevance Health",
@@ -1046,14 +1037,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 18.14,
-    "max_score": 26.56,
-    "min_score": 1.95
+    "avg_score": 23.48,
+    "max_score": 29.3,
+    "min_score": 12.11
   },
   {
     "case_id": "53_spirits",
     "title": "Premium Spirits and Wines — Deep Research Analysis (v3.8 R8)",
-    "domain": "Premium Spirits and Wines",
+    "domain": "Spirits and Wines (Premium Alcohol)",
     "entities": [
       "Diageo plc",
       "Pernod Ricard SA",
@@ -1066,9 +1057,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 20.18,
+    "avg_score": 24.35,
     "max_score": 29.3,
-    "min_score": 14.45
+    "min_score": 17.97
   },
   {
     "case_id": "54_online_travel",
@@ -1086,9 +1077,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 15.89,
-    "max_score": 29.69,
-    "min_score": 5.47
+    "avg_score": 30.82,
+    "max_score": 37.11,
+    "min_score": 24.61
   },
   {
     "case_id": "55_specialty_chem",
@@ -1106,9 +1097,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 20.75,
+    "avg_score": 26.39,
     "max_score": 34.38,
-    "min_score": 5.86
+    "min_score": 14.84
   },
   {
     "case_id": "56_datacenters",
@@ -1126,9 +1117,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.31,
-    "max_score": 32.42,
-    "min_score": 9.38
+    "avg_score": 23.18,
+    "max_score": 30.86,
+    "min_score": 7.42
   },
   {
     "case_id": "57_gaming",
@@ -1145,10 +1136,10 @@
       "NetEase, Inc."
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 10.07,
-    "max_score": 16.8,
-    "min_score": 0.78
+    "models_scored": 8,
+    "avg_score": 17.19,
+    "max_score": 26.95,
+    "min_score": 1.17
   },
   {
     "case_id": "58_autonomous",
@@ -1165,10 +1156,10 @@
       "AutoX"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 25.26,
-    "max_score": 34.38,
-    "min_score": 18.75
+    "models_scored": 8,
+    "avg_score": 17.87,
+    "max_score": 22.66,
+    "min_score": 8.98
   },
   {
     "case_id": "59_cruise",
@@ -1186,9 +1177,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 21.66,
-    "max_score": 34.38,
-    "min_score": 12.89
+    "avg_score": 20.49,
+    "max_score": 29.3,
+    "min_score": 7.81
   },
   {
     "case_id": "60_reinsurance",
@@ -1206,9 +1197,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 11.5,
-    "max_score": 24.22,
-    "min_score": 0
+    "avg_score": 25.39,
+    "max_score": 30.86,
+    "min_score": 8.98
   },
   {
     "case_id": "61_edtech",
@@ -1226,9 +1217,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 21.81,
-    "max_score": 31.64,
-    "min_score": 5.47
+    "avg_score": 29.82,
+    "max_score": 33.98,
+    "min_score": 27.34
   },
   {
     "case_id": "62_music",
@@ -1246,9 +1237,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.35,
+    "avg_score": 25.0,
     "max_score": 34.77,
-    "min_score": 12.11
+    "min_score": 10.94
   },
   {
     "case_id": "63_pipelines",
@@ -1266,9 +1257,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 9.94,
-    "max_score": 22.66,
-    "min_score": 0
+    "avg_score": 20.49,
+    "max_score": 30.08,
+    "min_score": 3.91
   },
   {
     "case_id": "64_cement",
@@ -1286,9 +1277,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 13.76,
-    "max_score": 26.95,
-    "min_score": 0
+    "avg_score": 14.97,
+    "max_score": 24.61,
+    "min_score": 5.08
   },
   {
     "case_id": "65_indian_it",
@@ -1305,10 +1296,10 @@
       "Coforge"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 19.14,
-    "max_score": 39.06,
-    "min_score": 0.78
+    "models_scored": 8,
+    "avg_score": 29.05,
+    "max_score": 37.5,
+    "min_score": 11.72
   },
   {
     "case_id": "66_casinos",
@@ -1326,9 +1317,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.58,
-    "max_score": 30.47,
-    "min_score": 5.47
+    "avg_score": 23.65,
+    "max_score": 32.03,
+    "min_score": 8.98
   },
   {
     "case_id": "67_personal_care",
@@ -1346,9 +1337,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 18.45,
-    "max_score": 31.25,
-    "min_score": 2.73
+    "avg_score": 25.43,
+    "max_score": 33.59,
+    "min_score": 9.38
   },
   {
     "case_id": "68_trucking",
@@ -1366,9 +1357,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 10.91,
-    "max_score": 19.14,
-    "min_score": 0.78
+    "avg_score": 18.19,
+    "max_score": 34.77,
+    "min_score": 5.08
   },
   {
     "case_id": "69_ofs",
@@ -1385,10 +1376,10 @@
       "Liberty Energy"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 16.97,
-    "max_score": 28.12,
-    "min_score": 0
+    "models_scored": 8,
+    "avg_score": 23.78,
+    "max_score": 30.47,
+    "min_score": 8.59
   },
   {
     "case_id": "70_ad_agencies",
@@ -1406,9 +1397,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 16.91,
-    "max_score": 27.34,
-    "min_score": 8.83
+    "avg_score": 20.23,
+    "max_score": 25.78,
+    "min_score": 8.98
   },
   {
     "case_id": "71_robotics",
@@ -1425,10 +1416,10 @@
       "Teradyne (Universal Robots)"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 13.15,
-    "max_score": 22.66,
-    "min_score": 6.64
+    "models_scored": 8,
+    "avg_score": 24.51,
+    "max_score": 28.52,
+    "min_score": 20.31
   },
   {
     "case_id": "72_quantum",
@@ -1445,10 +1436,10 @@
       "Pasqal"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 18.71,
-    "max_score": 28.12,
-    "min_score": 13.67
+    "models_scored": 7,
+    "avg_score": 18.86,
+    "max_score": 26.17,
+    "min_score": 11.72
   },
   {
     "case_id": "73_space",
@@ -1465,10 +1456,10 @@
       "China Satcom"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 23.83,
-    "max_score": 30.47,
-    "min_score": 17.19
+    "models_scored": 8,
+    "avg_score": 26.86,
+    "max_score": 33.2,
+    "min_score": 21.88
   },
   {
     "case_id": "74_lab_tools",
@@ -1486,9 +1477,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 11.94,
-    "max_score": 25,
-    "min_score": 0
+    "avg_score": 23.39,
+    "max_score": 35.55,
+    "min_score": 10.55
   },
   {
     "case_id": "75_hydrogen",
@@ -1506,14 +1497,14 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 18.01,
-    "max_score": 27.34,
-    "min_score": 8.98
+    "avg_score": 22.14,
+    "max_score": 29.3,
+    "min_score": 12.89
   },
   {
     "case_id": "76_gas_utilities",
     "title": "US Gas Utilities — Deep Research Analysis (v3.8 R8)",
-    "domain": "US Gas Utilities",
+    "domain": "Gas Utilities",
     "entities": [
       "Atmos Energy",
       "NiSource",
@@ -1525,10 +1516,10 @@
       "Chesapeake Utilities"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 14.89,
-    "max_score": 34.77,
-    "min_score": 0.0
+    "models_scored": 6,
+    "avg_score": 21.09,
+    "max_score": 29.3,
+    "min_score": 10.94
   },
   {
     "case_id": "77_pharma_distribution",
@@ -1546,9 +1537,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.53,
-    "max_score": 24.22,
-    "min_score": 10.55
+    "avg_score": 25.26,
+    "max_score": 28.91,
+    "min_score": 19.53
   },
   {
     "case_id": "78_enterprise_software_erp_crm_saas",
@@ -1566,9 +1557,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 20.57,
-    "max_score": 30.47,
-    "min_score": 10.94
+    "avg_score": 30.16,
+    "max_score": 34.77,
+    "min_score": 19.92
   },
   {
     "case_id": "79_legacy_auto_oems",
@@ -1586,9 +1577,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.97,
-    "max_score": 23.44,
-    "min_score": 0
+    "avg_score": 26.04,
+    "max_score": 32.81,
+    "min_score": 17.58
   },
   {
     "case_id": "80_us_wireless_telecom_carriers",
@@ -1606,9 +1597,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 14.93,
-    "max_score": 24.22,
-    "min_score": 6.25
+    "avg_score": 21.7,
+    "max_score": 31.25,
+    "min_score": 8.59
   },
   {
     "case_id": "81_athletic_apparel_and_footwear_brands",
@@ -1626,9 +1617,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 13.28,
-    "max_score": 22.66,
-    "min_score": 0
+    "avg_score": 18.66,
+    "max_score": 26.95,
+    "min_score": 4.69
   },
   {
     "case_id": "82_lithium_mining_and_processing",
@@ -1646,9 +1637,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.01,
-    "max_score": 26.56,
-    "min_score": 10.55
+    "avg_score": 23.57,
+    "max_score": 30.08,
+    "min_score": 19.14
   },
   {
     "case_id": "83_container_shipping_lines",
@@ -1666,9 +1657,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.14,
-    "max_score": 29.69,
-    "min_score": 7.81
+    "avg_score": 24.74,
+    "max_score": 30.86,
+    "min_score": 12.5
   },
   {
     "case_id": "84_data_center_and_tower_reits",
@@ -1686,9 +1677,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 18.84,
-    "max_score": 25.78,
-    "min_score": 3.12
+    "avg_score": 24.26,
+    "max_score": 29.69,
+    "min_score": 21.09
   },
   {
     "case_id": "85_global_tobacco_companies",
@@ -1705,10 +1696,10 @@
       "China Tobacco International (HK)"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 22.96,
-    "max_score": 33.98,
-    "min_score": 10.94
+    "models_scored": 8,
+    "avg_score": 28.32,
+    "max_score": 36.72,
+    "min_score": 21.09
   },
   {
     "case_id": "86_gold_mining_majors",
@@ -1726,9 +1717,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 13.45,
-    "max_score": 31.64,
-    "min_score": 0
+    "avg_score": 27.56,
+    "max_score": 33.98,
+    "min_score": 14.06
   },
   {
     "case_id": "87_north_american_class_i_railroads",
@@ -1746,9 +1737,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 13.85,
-    "max_score": 20.7,
-    "min_score": 1.17
+    "avg_score": 21.88,
+    "max_score": 29.69,
+    "min_score": 9.38
   },
   {
     "case_id": "88_auto_parts_and_component_suppliers",
@@ -1766,9 +1757,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 20.7,
-    "max_score": 31.25,
-    "min_score": 14.06
+    "avg_score": 23.13,
+    "max_score": 30.86,
+    "min_score": 12.11
   },
   {
     "case_id": "89_renewable_diesel_and_biofuel_producers",
@@ -1785,10 +1776,10 @@
       "HF Sinclair"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 15.97,
-    "max_score": 22.27,
-    "min_score": 10.16
+    "models_scored": 8,
+    "avg_score": 19.24,
+    "max_score": 30.47,
+    "min_score": 12.89
   },
   {
     "case_id": "90_building_products_and_materials",
@@ -1806,9 +1797,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 19.31,
-    "max_score": 34.77,
-    "min_score": 6.64
+    "avg_score": 25.87,
+    "max_score": 30.47,
+    "min_score": 19.92
   },
   {
     "case_id": "91_food_retail_and_grocery_chains",
@@ -1825,10 +1816,10 @@
       "Seven & i Holdings"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 23.0,
-    "max_score": 33.2,
-    "min_score": 12.5
+    "models_scored": 8,
+    "avg_score": 26.81,
+    "max_score": 32.81,
+    "min_score": 15.62
   },
   {
     "case_id": "92_cybersecurity_pure_play_vendors",
@@ -1846,9 +1837,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 13.76,
-    "max_score": 20.7,
-    "min_score": 0.39
+    "avg_score": 20.36,
+    "max_score": 27.4,
+    "min_score": 8.2
   },
   {
     "case_id": "93_generic_pharmaceutical_manufacturers",
@@ -1866,9 +1857,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 12.72,
-    "max_score": 26.17,
-    "min_score": 0
+    "avg_score": 26.52,
+    "max_score": 33.59,
+    "min_score": 16.02
   },
   {
     "case_id": "94_discount_retailers_and_mass_merchants",
@@ -1886,9 +1877,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 26.13,
-    "max_score": 37.11,
-    "min_score": 19.92
+    "avg_score": 28.43,
+    "max_score": 33.59,
+    "min_score": 21.88
   },
   {
     "case_id": "95_networking_and_switching_equipment",
@@ -1906,9 +1897,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 24.7,
-    "max_score": 37.5,
-    "min_score": 11.72
+    "avg_score": 25.13,
+    "max_score": 34.77,
+    "min_score": 3.91
   },
   {
     "case_id": "96_mortgage_reits",
@@ -1926,9 +1917,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 9.94,
-    "max_score": 23.05,
-    "min_score": 0
+    "avg_score": 14.67,
+    "max_score": 20.31,
+    "min_score": 3.91
   },
   {
     "case_id": "97_copper_mining_majors",
@@ -1946,9 +1937,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 17.66,
-    "max_score": 35.16,
-    "min_score": 5.47
+    "avg_score": 26.04,
+    "max_score": 31.64,
+    "min_score": 17.58
   },
   {
     "case_id": "98_semiconductor_eda_and_ip_licensors",
@@ -1966,9 +1957,9 @@
     ],
     "n_entities": 8,
     "models_scored": 9,
-    "avg_score": 31.25,
-    "max_score": 36.72,
-    "min_score": 21.09
+    "avg_score": 33.59,
+    "max_score": 41.8,
+    "min_score": 22.27
   },
   {
     "case_id": "99_asset_light_freight_forwarders_and_3pl",
@@ -1985,9 +1976,9 @@
       "CEVA Logistics (CMA CGM subsidiary)"
     ],
     "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 18.58,
-    "max_score": 28.52,
-    "min_score": 7.81
+    "models_scored": 8,
+    "avg_score": 20.02,
+    "max_score": 23.83,
+    "min_score": 12.11
   }
 ]

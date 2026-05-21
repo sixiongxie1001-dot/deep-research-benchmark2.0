@@ -66,7 +66,7 @@ function render(m, lb, cases) {
         <div class="stat-row" style="border-radius: 4px; overflow: hidden; border: 1px solid var(--border-faint); border-top: 1px solid var(--border-faint); border-bottom: 1px solid var(--border-faint)">
           <div class="stat-cell"><div class="num">${m.avg_pct.toFixed(2)}<span class="unit">%</span></div><div class="lbl">Average</div></div>
           <div class="stat-cell"><div class="num">${m.median_pct.toFixed(2)}<span class="unit">%</span></div><div class="lbl">Median</div></div>
-          <div class="stat-cell"><div class="num">${m.pass_n}<span class="unit"> /100</span></div><div class="lbl">In pass band</div></div>
+          <div class="stat-cell"><div class="num">${m.pass_n}<span class="unit"> /${m.n}</span></div><div class="lbl">In pass band</div></div>
           <div class="stat-cell"><div class="num">${m.avg_chars.toLocaleString()}</div><div class="lbl">Avg out chars</div></div>
         </div>
       </div>
@@ -128,7 +128,7 @@ function render(m, lb, cases) {
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 16px">
           <div>
             <p class="section-eyebrow">All cases</p>
-            <h2 class="section-title-sm">${m.name} on all 100 cases.</h2>
+            <h2 class="section-title-sm">${m.name} on ${m.n} scored cases.</h2>
           </div>
           <input id="case-filter" class="input" placeholder="Filter…" style="width: 220px">
         </div>
