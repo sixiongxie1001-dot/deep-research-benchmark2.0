@@ -1,7 +1,7 @@
 {
   "_meta": {
     "paper_title": "DEEPWEB-BENCH: A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation",
-    "venue": "NeurIPS 2026 (Preprint)",
+    "venue": "arXiv preprint 2605.21482",
     "n_tasks": 100,
     "n_cells_per_task": 64,
     "n_total_cells": 6400,
