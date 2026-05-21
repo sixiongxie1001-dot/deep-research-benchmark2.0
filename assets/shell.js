@@ -17,7 +17,7 @@ function renderTopbar(activePage) {
           <span class="brand-mark"></span>
           <span class="brand-text">
             DEEPWEB-BENCH
-            <span class="brand-text-ver">NeurIPS 2026</span>
+            <span class="brand-text-ver">arXiv 2605.21482</span>
           </span>
         </a>
         <nav class="topbar-nav">
