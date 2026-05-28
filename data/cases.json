@@ -14,8 +14,8 @@
       "01.AI (Zero-One AI)"
     ],
     "n_entities": 8,
-    "models_scored": 7,
-    "avg_score": 64.29,
+    "models_scored": 9,
+    "avg_score": 66.06,
     "max_score": 79.69,
     "min_score": 52.34
   },
@@ -34,9 +34,9 @@
       "Baidu AI Cloud"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 33.54,
-    "max_score": 41.41,
+    "models_scored": 9,
+    "avg_score": 34.81,
+    "max_score": 44.92,
     "min_score": 27.34
   },
   {
@@ -74,8 +74,8 @@
       "UBS Group"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 48.88,
+    "models_scored": 9,
+    "avg_score": 51.69,
     "max_score": 82.03,
     "min_score": 30.08
   },
@@ -94,8 +94,8 @@
       "ConocoPhillips"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 49.71,
+    "models_scored": 9,
+    "avg_score": 51.52,
     "max_score": 72.27,
     "min_score": 9.38
   },
@@ -114,8 +114,8 @@
       "Leonardo"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 66.94,
+    "models_scored": 9,
+    "avg_score": 69.49,
     "max_score": 92.19,
     "min_score": 32.03
   },
@@ -154,9 +154,9 @@
       "Klarna"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 59.77,
-    "max_score": 67.58,
+    "models_scored": 9,
+    "avg_score": 61.07,
+    "max_score": 71.48,
     "min_score": 51.95
   },
   {
@@ -180,34 +180,14 @@
     "min_score": 58.98
   },
   {
-    "case_id": "100_off_price_and_treasure_hunt_retailers",
-    "title": "Off-Price and Treasure-Hunt Retailers — Deep Research Analysis (v3.8 R8)",
-    "domain": "Off-Price and Treasure-Hunt Retailers",
-    "entities": [
-      "The TJX Companies",
-      "Ross Stores",
-      "Burlington Stores",
-      "Ollie's Bargain Outlet",
-      "Grocery Outlet",
-      "B&M European Value Retail",
-      "Pepco Group",
-      "Action Holding (3i portfolio)"
-    ],
-    "n_entities": 8,
-    "models_scored": 9,
-    "avg_score": 26.13,
-    "max_score": 32.42,
-    "min_score": 19.14
-  },
-  {
     "case_id": "10_commercial_aerospace",
     "title": "Commercial Aerospace — Deep Research Analysis (v3.8 R6)",
     "domain": "Commercial Aerospace — Deep Research Analysis (v3.8 R6)",
     "entities": [],
     "n_entities": 0,
-    "models_scored": 8,
-    "avg_score": 36.28,
-    "max_score": 49.22,
+    "models_scored": 9,
+    "avg_score": 38.72,
+    "max_score": 58.2,
     "min_score": 20.7
   },
   {
@@ -225,10 +205,10 @@
       "ByteDance"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 30.22,
+    "models_scored": 9,
+    "avg_score": 28.47,
     "max_score": 35.94,
-    "min_score": 25.78
+    "min_score": 14.45
   },
   {
     "case_id": "12_ev_batteries",
@@ -236,9 +216,9 @@
     "domain": "EV Battery Cell Manufacturers",
     "entities": [],
     "n_entities": 0,
-    "models_scored": 8,
-    "avg_score": 33.74,
-    "max_score": 42.97,
+    "models_scored": 9,
+    "avg_score": 35.11,
+    "max_score": 46.09,
     "min_score": 1.56
   },
   {
@@ -816,9 +796,9 @@
       "HTX"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 17.29,
-    "max_score": 19.92,
+    "models_scored": 9,
+    "avg_score": 18.62,
+    "max_score": 29.3,
     "min_score": 15.23
   },
   {
@@ -1136,8 +1116,8 @@
       "NetEase, Inc."
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 17.19,
+    "models_scored": 9,
+    "avg_score": 17.97,
     "max_score": 26.95,
     "min_score": 1.17
   },
@@ -1156,9 +1136,9 @@
       "AutoX"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 17.87,
-    "max_score": 22.66,
+    "models_scored": 9,
+    "avg_score": 18.71,
+    "max_score": 25.39,
     "min_score": 8.98
   },
   {
@@ -1296,8 +1276,8 @@
       "Coforge"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 29.05,
+    "models_scored": 9,
+    "avg_score": 28.86,
     "max_score": 37.5,
     "min_score": 11.72
   },
@@ -1376,8 +1356,8 @@
       "Liberty Energy"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 23.78,
+    "models_scored": 9,
+    "avg_score": 24.22,
     "max_score": 30.47,
     "min_score": 8.59
   },
@@ -1416,9 +1396,9 @@
       "Teradyne (Universal Robots)"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 24.51,
-    "max_score": 28.52,
+    "models_scored": 9,
+    "avg_score": 25.04,
+    "max_score": 29.3,
     "min_score": 20.31
   },
   {
@@ -1436,9 +1416,9 @@
       "Pasqal"
     ],
     "n_entities": 8,
-    "models_scored": 7,
-    "avg_score": 18.86,
-    "max_score": 26.17,
+    "models_scored": 9,
+    "avg_score": 19.62,
+    "max_score": 27.34,
     "min_score": 11.72
   },
   {
@@ -1456,8 +1436,8 @@
       "China Satcom"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 26.86,
+    "models_scored": 9,
+    "avg_score": 27.17,
     "max_score": 33.2,
     "min_score": 21.88
   },
@@ -1516,10 +1496,10 @@
       "Chesapeake Utilities"
     ],
     "n_entities": 8,
-    "models_scored": 6,
-    "avg_score": 21.09,
+    "models_scored": 9,
+    "avg_score": 16.84,
     "max_score": 29.3,
-    "min_score": 10.94
+    "min_score": 1.56
   },
   {
     "case_id": "77_pharma_distribution",
@@ -1696,8 +1676,8 @@
       "China Tobacco International (HK)"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 28.32,
+    "models_scored": 9,
+    "avg_score": 28.69,
     "max_score": 36.72,
     "min_score": 21.09
   },
@@ -1776,8 +1756,8 @@
       "HF Sinclair"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 19.24,
+    "models_scored": 9,
+    "avg_score": 19.1,
     "max_score": 30.47,
     "min_score": 12.89
   },
@@ -1816,10 +1796,10 @@
       "Seven & i Holdings"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 26.81,
+    "models_scored": 9,
+    "avg_score": 25.17,
     "max_score": 32.81,
-    "min_score": 15.62
+    "min_score": 12.11
   },
   {
     "case_id": "92_cybersecurity_pure_play_vendors",
@@ -1976,9 +1956,29 @@
       "CEVA Logistics (CMA CGM subsidiary)"
     ],
     "n_entities": 8,
-    "models_scored": 8,
-    "avg_score": 20.02,
-    "max_score": 23.83,
+    "models_scored": 9,
+    "avg_score": 21.05,
+    "max_score": 29.3,
     "min_score": 12.11
+  },
+  {
+    "case_id": "100_off_price_and_treasure_hunt_retailers",
+    "title": "Off-Price and Treasure-Hunt Retailers — Deep Research Analysis (v3.8 R8)",
+    "domain": "Off-Price and Treasure-Hunt Retailers",
+    "entities": [
+      "The TJX Companies",
+      "Ross Stores",
+      "Burlington Stores",
+      "Ollie's Bargain Outlet",
+      "Grocery Outlet",
+      "B&M European Value Retail",
+      "Pepco Group",
+      "Action Holding (3i portfolio)"
+    ],
+    "n_entities": 8,
+    "models_scored": 9,
+    "avg_score": 26.13,
+    "max_score": 32.42,
+    "min_score": 19.14
   }
 ]
